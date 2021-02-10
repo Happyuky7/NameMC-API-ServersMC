@@ -1,7 +1,7 @@
 General:
   Prefix: '&9[&fNameMC&9]&r'
   No-Permission: '[%prefix%] &cNo Tienes Permisos.'
-  NAMEMC-VOTE: https://en.namemc.com/server/
+  NAMEMC-VOTE: https://es.namemc.com/server/
   TestReward: '%prefix% &bTest &dPremio &a:D &7| &cMira la consola.'
 Langs:
   CUSTOM-ERROR:
@@ -18,7 +18,7 @@ Langs:
   NO-VOTING:
   - '&8------------------------------'
   - '&9Vote en &f%namemcwebvote%%serverip%'
-  - '&7Luego, para verificar su voto, ejecute lo siguiente '
+  - '&7Luego, para verificar su voto, ejecute el siguiente '
   - '&bComando: &f/namemc verify'
   - '&8------------------------------'
   VOTING-PLAYER:
