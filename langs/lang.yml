@@ -1,0 +1,27 @@
+General:
+  Prefix: '&9[&fNameMC&9]&r'
+  No-Permission: '[%prefix%] &cNo Permission.'
+  NAMEMC-VOTE: https://en.namemc.com/server/
+  TestReward: '%prefix% &bTest &dReward &a:D &7| &cLook at the console.'
+Langs:
+  CUSTOM-ERROR:
+  - '&8------------------------------'
+  - '&7If You Need Help Use the Command: &f/namemc help'
+  - '&bTo Vote Use the Command: &f/namemc vote'
+  - '&8------------------------------'
+  VOTING-CMD:
+  - '&8------------------------------'
+  - '&9Vote in &f%namemcwebvote%%serverip%'
+  - '&7Then To Check Your Vote, Run The Following '
+  - '&bCommand: &f/namemc verify'
+  - '&8------------------------------'
+  NO-VOTING:
+  - '&8------------------------------'
+  - '&9Vote in &f%namemcwebvote%%serverip%'
+  - '&7Then To Check Your Vote, Run The Following '
+  - '&bCommand: &f/namemc verify'
+  - '&8------------------------------'
+  VOTING-PLAYER:
+  - '&aThanks for Voting for the Server,'
+  - '&aYou have received your reward.'
+  - '&aNameMC: &f%namemcwebvote%%serverip%'
