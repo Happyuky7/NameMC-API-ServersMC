@@ -1,27 +1,55 @@
+# =================================================================================================
+# Find the other Languages already translated in the Following Link:
+# Following Link: https://github.com/HappyRogelio7/NameMC-API-ServersMC/tree/main/langs
+# You can also find help on the Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
+# =================================================================================================
+# Translation by: https://github.com/HappyRogelio7/
+# =================================================================================================
 General:
-  Prefix: '&9[&fNameMC&9]&r'
-  No-Permission: '[%prefix%] &cNo Permission.'
-  NAMEMC-VOTE: https://en.namemc.com/server/
-  TestReward: '%prefix% &bTest &dReward &a:D &7| &cLook at the console.'
+  Prefix: "&9[&fNameMC&9]&r" #Prefix: %prefix%
+  No-Permission: "[%prefix%] &cYou do not have permissions."
+  NAMEMC-VOTE: "https://namemc.com/server/"
+  TestReward:
+    - " "
+    - "%prefix% &bTest &dReward &a:D &7| &cLook at the console or Check the console."
+    - " "
+
 Langs:
   CUSTOM-ERROR:
-  - '&8------------------------------'
-  - '&7If You Need Help Use the Command: &f/namemc help'
-  - '&bTo Vote Use the Command: &f/namemc vote'
-  - '&8------------------------------'
+    - "&8----------------------------------------------"
+    - "&7If You Need Help Use the Command: &f/namemc help"
+    - "&bTo Vote Use the Command: &f/namemc vote"
+    - "&8----------------------------------------------"
   VOTING-CMD:
-  - '&8------------------------------'
-  - '&9Vote in &f%namemcwebvote%%serverip%'
-  - '&7Then To Check Your Vote, Run The Following '
-  - '&bCommand: &f/namemc verify'
-  - '&8------------------------------'
+    - "&8----------------------------------------------"
+    - "&9Vote in &f%namemcwebvote%%serverip%"
+    - "&7Then To Check Your Vote, Run The Following "
+    - "&bCommand: &f/namemc verify"
+    - "&8----------------------------------------------"
   NO-VOTING:
-  - '&8------------------------------'
-  - '&9Vote in &f%namemcwebvote%%serverip%'
-  - '&7Then To Check Your Vote, Run The Following '
-  - '&bCommand: &f/namemc verify'
-  - '&8------------------------------'
+    - "&8----------------------------------------------"
+    - "&9Vote in &f%namemcwebvote%%serverip%"
+    - "&7Then To Check Your Vote, Run The Following "
+    - "&bCommand: &f/namemc verify"
+    - "&8----------------------------------------------"
   VOTING-PLAYER:
-  - '&aThanks for Voting for the Server,'
-  - '&aYou have received your reward.'
-  - '&aNameMC: &f%namemcwebvote%%serverip%'
+    - " "
+    - "&aThanks for Voting for the Server,"
+    - "&aYou have received your reward."
+    - "&aNameMC: &f%namemcwebvote%%serverip%"
+    - " "
+
+  TEST:
+    PLAYER-VOTING:
+      - "&8---------------%prefix%&8---------------"
+      - "&aThe Player &f%otherplayer% &ahas been Voted by the server."
+      - "&8---------------%prefix%&8---------------"
+    PLAYER-NO-VOTING:
+      - "&8---------------%prefix%&8---------------"
+      - "&cThe Player &f%otherplayer% &chas not yet been Voted by the Server."
+      - "&8---------------%prefix%&8---------------"
+    PLAYER-ERROR:
+      - "&8---------------%prefix%&8---------------"
+      - "&cYou have to provide the Nick or Name of the Player."
+      - "&8---------------%prefix%&8---------------"
+
