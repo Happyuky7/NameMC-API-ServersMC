@@ -7,7 +7,7 @@
 # =================================================================================================
 General:
   Prefix: "&9[&fNameMC&9]&r" #Prefix: %prefix%
-  No-Permission: "[%prefix%] &cYou do not have permissions."
+  No-Permission: "%prefix% &cYou do not have permissions."
   NAMEMC-VOTE: "https://namemc.com/server/"
   TestReward:
     - " "
