@@ -1,13 +1,13 @@
 # =================================================================================================
-# Find the other Languages already translated in the Following Link:
-# Following Link: https://github.com/HappyRogelio7/NameMC-API-ServersMC/tree/main/langs
-# You can also find help on the Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
+# Encuentre los otros idiomas ya traducidos en el siguiente enlace:
+# Enlace siguiente: https://github.com/HappyRogelio7/NameMC-API-ServersMC/tree/main/langs
+# También puede encontrar ayuda en la Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
 # =================================================================================================
 # Translation by: https://github.com/HappyRogelio7/
 # =================================================================================================
 General:
   Prefix: "&9[&fNameMC&9]&r" #Prefix: %prefix%
-  No-Permission: "[%prefix%] &cNo Tienes Permisos."
+  No-Permission: "%prefix% &cNo Tienes Permisos."
   NAMEMC-VOTE: "https://namemc.com/server/"
   TestReward:
     - " "
