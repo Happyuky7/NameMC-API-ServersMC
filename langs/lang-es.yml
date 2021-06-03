@@ -10,9 +10,18 @@ General:
   No-Permission: "%prefix% &cNo Tienes Permisos."
   NAMEMC-VOTE: "https://namemc.com/server/"
   TestReward:
-    - " "
-    - "%prefix% &bTest &dReward &a:D &7| &cMira la consola o Comprueba la consola."
-    - " "
+    Default:
+      - " "
+      - "%prefix% &bTest &dReward &a:D &7| &cMira la consola o Comprueba la consola and BungeeCord or Check the Server console and BungeeCord."
+      - " "
+    Server:
+      - " "
+      - "%prefix% &bTest &dReward &a:D &7| &cMira la consola o Comprueba la consola."
+      - " "
+    Bungee:
+      - " "
+      - "%prefix% &bTest &dReward &a:D &7| &cMira la consola de BungeeCord o Comprueba la consola de BungeeCord."
+      - " "
 
 Langs:
   CUSTOM-ERROR:
@@ -37,6 +46,10 @@ Langs:
     - "&aGracias por votar por el servidor,"
     - "&aHas recibido tu recompensa."
     - "&aNameMC: &f%namemcwebvote%%serverip%"
+    - " "
+  VOTING-ALLOW:
+    - " "
+    - "%prefix% &cYa has votado por el servidor."
     - " "
 
   TEST:
