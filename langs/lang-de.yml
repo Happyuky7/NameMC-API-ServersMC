@@ -1,0 +1,68 @@
+# =================================================================================================
+# Find the other Languages already translated in the Following Link:
+# Following Link: https://github.com/HappyRogelio7/NameMC-API-ServersMC/tree/main/langs
+# You can also find help on the Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
+# =================================================================================================
+# Translation by: https://github.com/InfoBlock/
+# =================================================================================================
+General:
+  Prefix: "&9[&fNameMC&9]&r" #Prefix: %prefix%
+  No-Permission: "%prefix% &cDu hast keine Rechte."
+  NAMEMC-VOTE: "https://namemc.com/server/"
+  TestReward:
+    Default:
+      - " "
+      - "%prefix% &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die Server und BungeeCord Konsole."
+      - " "
+    Server:
+      - " "
+      - "%prefix% &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die Server Konsole."
+      - " "
+    Bungee:
+      - " "
+      - "%prefix% &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die BungeeCord Konsole."
+      - " "
+
+Langs:
+  CUSTOM-ERROR:
+    - "&8----------------------------------------------"
+    - "&7Wenn du hilfe brauchst nutze: &f/namemc help"
+    - "&bUm zu voten nutze: &f/namemc vote"
+    - "&8----------------------------------------------"
+  VOTING-CMD:
+    - "&8----------------------------------------------"
+    - "&9Vote auf &f%namemcwebvote%%serverip%"
+    - "&7Um deinen Vote zu überprüfen nutze "
+    - "&Befehl: &f/namemc verify"
+    - "&8----------------------------------------------"
+  NO-VOTING:
+    - "&8----------------------------------------------"
+    - "&9Vote auf &f%namemcwebvote%%serverip%"
+    - "&7Um deinen Vote zu überprüfen nutze "
+    - "&bBefehl: &f/namemc verify"
+    - "&8----------------------------------------------"
+  VOTING-PLAYER:
+    - " "
+    - "&aDanke das du unseren Server gevoted hast!,"
+    - "&aDu hast deine Belohnung erhalten."
+    - "&aNameMC: &f%namemcwebvote%%serverip%"
+    - " "
+  VOTING-ALLOW:
+    - " "
+    - "%prefix% &cDu hast bereits für den Server gevoted."
+    - " "
+
+  TEST:
+    PLAYER-VOTING:
+      - "&8---------------%prefix%&8---------------"
+      - "&aDer Spieler &f%otherplayer% &awurde vom Server gevoted."
+      - "&8---------------%prefix%&8---------------"
+    PLAYER-NO-VOTING:
+      - "&8---------------%prefix%&8---------------"
+      - "&cDer Spieler &f%otherplayer% &cwurde nicht vom Server gevoted."
+      - "&8---------------%prefix%&8---------------"
+    PLAYER-ERROR:
+      - "&8---------------%prefix%&8---------------"
+      - "&cGebe den Nick oder den Namen des Spielers an."
+      - "&8---------------%prefix%&8---------------"
+

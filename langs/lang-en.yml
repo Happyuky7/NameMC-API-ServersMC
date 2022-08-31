@@ -16,7 +16,7 @@ General:
       - " "
     Server:
       - " "
-      - "%prefix% &bTest &dReward &a:D &7| &cLLook at the Server console or Check the Server console."
+      - "%prefix% &bTest &dReward &a:D &7| &cLook at the Server console or Check the Server console."
       - " "
     Bungee:
       - " "
