@@ -29,3 +29,5 @@ Use of the NameMC API for Minecraft Servers.
 > 1.17.X
 > 
 > 1.18.X
+> 
+> 1.19.X
