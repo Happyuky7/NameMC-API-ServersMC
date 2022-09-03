@@ -1,0 +1,21 @@
+name: NameMCAPI
+version: '${project.version}'
+main: com.github.happyrogelio7.namemcapi.NameMCAPI
+api-version: 1.16
+authors: [ HappyRogelio7 ]
+description: Use of the NameMC API for Minecraft Servers.
+website: https://github.com/HappyRogelio7
+commands:
+  namemc:
+    aliases:
+      - namemcapi
+      - namemcapiplugin
+      - namemcpluginapi
+    usage: /<command>
+
+  namemcapiamdin:
+    aliases:
+      - namemcadmin
+      - namemcapipluginadmin
+      - namemcpluginapiadmin
+    usage: /<command> help

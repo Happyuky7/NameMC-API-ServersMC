@@ -1,0 +1,79 @@
+# =================================================================================================
+# You can also find help on the Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
+# =================================================================================================
+General:
+  Update: true
+  Config: 1.0.5
+  Options:
+    MSG-Player: true #Configure these messages in lang.yml | This is in Beta!
+  Online-Mode: true #your online or semipremium use false.
+  Langs: 'default' #LANGS: default. https://github.com/HappyRogelio7/NameMC-API-ServersMC/
+  IP: 'example.com' #IP your server. Example: IP: 'hypixel.net' OR IP: '127.0.0.0:25565' OR IP: 'localhost:25565'
+
+#At the moment only "YAML" is available to save data player.
+Save-Data:
+  db-type: "YAML"
+  yaml-options:
+    yaml-enable: true
+    yaml-database: "playerdata"
+  mysql-options: #This feature is in beta
+    mysql-enable: false
+    mysql-driver: com.mysql.jdbc.Driver
+    mysql-ip: 127.0.0.1
+    mysql-port: 3306
+    mysql-user: root
+    mysql-password: 'password1234'
+    mysql-database: "namemcapi"
+  mongodb-options: # MongoDB is not available in this version of the plugin.
+    mongodb-enable: false
+    mongodb-type: uri #uri or host
+    mongodb-uri: https://mongodb.org
+    mongodb-ip: 127.0.0.1
+    mongodb-port: 27017
+    mongodb-user: root
+    mongodb-password: 'password1234'
+    mongodb-database: namemcapi
+
+
+Rewards:
+  Commands:
+    Console-CMD: true
+    Console:
+      - 'lp user <player> parent set verify'
+      - 'give <player> minecraft:diamond 1'
+      - 'crate give <player> NameMC 5'
+      - "eco give <player> 10000"
+
+    # Player Commands Required "/".
+    Player-CMD: false
+    Player:
+      - ''
+      - ''
+      - ''
+
+    # Bungee message. | This Option is very bugged at the moment since it is in Beta!, it is recommended not to use it.
+    Bungee-CMD: false
+    Bungee:
+      - ''
+      - ''
+      - ''
+
+Remove-CMD:
+  Console-CMD: true
+  Console:
+    - 'lp user <player> parent set default'
+    - "eco remove <player> 10000"
+
+    # Player Commands Required "/".
+  Player-CMD: false
+  Player:
+    - ''
+    - ''
+    - ''
+
+    # Bungee message. | This Option is very bugged at the moment since it is in Beta!, it is recommended not to use it.
+  Bungee-CMD: false
+  Bungee:
+    - ''
+    - ''
+    - ''
