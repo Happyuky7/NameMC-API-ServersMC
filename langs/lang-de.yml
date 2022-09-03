@@ -30,35 +30,35 @@ General:
       &r
     RELOAD-ALL: |-
       &r 
-      <prefix> &aReload All configs.
+      <prefix> &aLade alle configs neu.
       &r
     RELOAD-CONFIG: |-
       &r 
-      <prefix> &aReload config.yml.
+      <prefix> &aLade config.yml neu.
       &r
     RELOAD-MSSLANG: |-
       &r 
-      <prefix> &aReload lang.yml.
+      <prefix> &aLade lang.yml neu.
       &r
     RELOAD-PLAYERDATA: |-
       &r 
-      <prefix> &aReload playerdata.yml.
+      <prefix> &aLade playerdata.yml neu.
       &r
 
 MSG-Player:
   MSG-TITLE:
     ENABLE: false
     VOTING-PLAYER:
-      TITLE: "&f<player> &aThanks for Voting for the Server,"
-      SUBTITLE: "&aYou have received your reward."
+      TITLE: "&f<player> &aDanke für deinen vote,"
+      SUBTITLE: "&aDu hast deine Belhonung erhalten."
     NO-VOTING:
-      TITLE: "&f<player> &cYou haven't voted for the server yet"
-      SUBTITLE: "&9Vote in &f<namemcwebvote><serverip>"
+      TITLE: "&f<player> &cDu hast noch nicht gevoted"
+      SUBTITLE: "&9Vote auf &f<namemcwebvote><serverip>"
     VOTING-ALLOW:
-      TITLE: "<prefix> &cYou have already voted for the server."
-      SUBTITLE: "&aThanks for voting!"
+      TITLE: "<prefix> &cDu hast bereits gevoted."
+      SUBTITLE: "&aDanke für deinen vote!"
     VOTING-CMD:
-      TITLE: "&f<player> &aYou can Vote for the Server Here"
+      TITLE: "&f<player> &aDu kannst hier voten"
       SUBTITLE: "&f<namemcwebvote><serverip>"
 
 Langs:
@@ -91,25 +91,25 @@ Langs:
     &r
   REMOVE-VOTING: |-
     &r 
-    <prefix> &dRemoved the player from the list of people who voted for the server.
+    <prefix> &dDer Spieler wurde von der Vote Liste entfernt.
     &r 
 
 Check:
   PLAYER-VOTING: |-
     &8---------------<prefix>&8---------------
-    &aThe Player &f<otherplayer> &ahas been Voted by the server.
+    &aDer Spieler &f<otherplayer> &awurde vom Server gevoted.
     &8---------------<prefix>&8---------------
   PLAYER-NO-VOTING: |-
     &8---------------<prefix>%&8---------------
-    &cThe Player &f<otherplayer> &chas not yet been Voted by the Server.
+    &cDer Spieler &f<otherplayer> &cwurde nicht vom Server gevoted.
     &8---------------<prefix>&8---------------
   PLAYER-ERROR-DATA: |-
     &8---------------<prefix>&8---------------
-    &cNo player data found in PlayerData.
+    &cSpieler konnte nicht gefunden werden.
     &8---------------<prefix>&8---------------
   PLAYER-NULL: |-
     &8---------------<prefix>&8---------------
-    &cYou are missing the player's nickname.
+    &cDu hast keinen Spielernamen angegeben.
     &8---------------<prefix>&8---------------
 
 
@@ -118,17 +118,17 @@ Check:
 RemovePlayer:
   PLAYER-NULL: |-
     &8---------------<prefix>&8---------------
-    &cYou are missing the player's nickname.
+    &cDu hast keinen Spielernamen angegeben.
     &8---------------<prefix>&8---------------
   PLAYER-NO-VOTING: |-
     &8---------------<prefix>%&8---------------
-    &cThe Player &f<otherplayer> &chas not yet been Voted by the Server.
+    &cDer Spieler &f<otherplayer> &cwurde nicht vom Server gevoted.
     &8---------------<prefix>&8---------------
   PLAYER-REMOVE: |-
     &8---------------<prefix>&8---------------
-    &aThe Player &f<otherplayer> &a has been successfully removed.
+    &aDer Spieler &f<otherplayer> &a wurde entfernt.
     &8---------------<prefix>&8---------------
   PLAYER-ERROR-DATA: |-
     &8---------------<prefix>&8---------------
-    &cNo player data found in PlayerData.
+    &cSpieler konnte nicht gefunden werden.
     &8---------------<prefix>&8---------------
