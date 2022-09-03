@@ -1,0 +1,134 @@
+# =================================================================================================
+# Find the other Languages already translated in the Following Link:
+# Following Link: https://github.com/HappyRogelio7/NameMC-API-ServersMC/tree/main/langs
+# You can also find help on the Wiki: https://github.com/HappyRogelio7/NameMC-API-ServersMC/wiki
+# =================================================================================================
+# Translation by: https://github.com/InfoBlock/
+# =================================================================================================
+General:
+  Prefix: "&9[&fNameMC&9]&r" #Prefix: %prefix%
+  No-Permission: "<prefix> &cDu hast keine Rechte."
+  NAMEMC-VOTE: "https://namemc.com/server/"
+  TestReward:
+    Default: |-
+      &r 
+      <prefix> &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die Server und BungeeCord Konsole.
+      &r
+    Server: |-
+      &r 
+      <prefix> &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die Server Konsole.
+      - " "
+    Bungee: |-
+      &r 
+      <prefix> &bTest &dBelohnung &a:D &7| &cSchaue oder überprüfe die BungeeCord Konsole.
+      &r 
+
+  Reload-MSG:
+    RELOAD-LIST: |-
+      &r 
+      <prefix> &f Args: all, config, msglang, playerdata.
+      &r
+    RELOAD-ALL: |-
+      &r 
+      <prefix> &aReload All configs.
+      &r
+    RELOAD-CONFIG: |-
+      &r 
+      <prefix> &aReload config.yml.
+      &r
+    RELOAD-MSSLANG: |-
+      &r 
+      <prefix> &aReload lang.yml.
+      &r
+    RELOAD-PLAYERDATA: |-
+      &r 
+      <prefix> &aReload playerdata.yml.
+      &r
+
+MSG-Player:
+  MSG-TITLE:
+    ENABLE: false
+    VOTING-PLAYER:
+      TITLE: "&f<player> &aThanks for Voting for the Server,"
+      SUBTITLE: "&aYou have received your reward."
+    NO-VOTING:
+      TITLE: "&f<player> &cYou haven't voted for the server yet"
+      SUBTITLE: "&9Vote in &f<namemcwebvote><serverip>"
+    VOTING-ALLOW:
+      TITLE: "<prefix> &cYou have already voted for the server."
+      SUBTITLE: "&aThanks for voting!"
+    VOTING-CMD:
+      TITLE: "&f<player> &aYou can Vote for the Server Here"
+      SUBTITLE: "&f<namemcwebvote><serverip>"
+
+Langs:
+  CUSTOM-ERROR: |-
+    &8----------------------------------------------
+    &7Wenn du hilfe brauchst nutze: &f/namemc help
+    &bUm zu voten nutze: &f/namemc vote"
+    &8----------------------------------------------
+  VOTING-CMD: |-
+    &8----------------------------------------------
+    &9Vote auf &f<namemcwebvote><serverip>
+    &7Um deinen Vote zu überprüfen nutze 
+    &bBefehl: &f/namemc verify
+    &8----------------------------------------------
+  NO-VOTING: |-
+    &8----------------------------------------------
+    &9Vote auf &f<namemcwebvote><serverip>
+    &7Um deinen Vote zu überprüfen nutze  
+    &bBefehl: &f/namemc verify
+    &8----------------------------------------------
+  VOTING-PLAYER: |-
+    &r 
+    &aDanke das du unseren Server gevoted hast!,"
+    &aDu hast deine Belohnung erhalten."
+    &aNameMC: &f<namemcwebvote><serverip>"
+    &r
+  VOTING-ALLOW: |-
+    &r 
+    <prefix> &cDu hast bereits für den Server gevoted.
+    &r
+  REMOVE-VOTING: |-
+    &r 
+    <prefix> &dRemoved the player from the list of people who voted for the server.
+    &r 
+
+Check:
+  PLAYER-VOTING: |-
+    &8---------------<prefix>&8---------------
+    &aThe Player &f<otherplayer> &ahas been Voted by the server.
+    &8---------------<prefix>&8---------------
+  PLAYER-NO-VOTING: |-
+    &8---------------<prefix>%&8---------------
+    &cThe Player &f<otherplayer> &chas not yet been Voted by the Server.
+    &8---------------<prefix>&8---------------
+  PLAYER-ERROR-DATA: |-
+    &8---------------<prefix>&8---------------
+    &cNo player data found in PlayerData.
+    &8---------------<prefix>&8---------------
+  PLAYER-NULL: |-
+    &8---------------<prefix>&8---------------
+    &cYou are missing the player's nickname.
+    &8---------------<prefix>&8---------------
+
+
+
+
+RemovePlayer:
+  PLAYER-NULL: |-
+    &8---------------<prefix>&8---------------
+    &cYou are missing the player's nickname.
+    &8---------------<prefix>&8---------------
+  PLAYER-NO-VOTING: |-
+    &8---------------<prefix>%&8---------------
+    &cThe Player &f<otherplayer> &chas not yet been Voted by the Server.
+    &8---------------<prefix>&8---------------
+  PLAYER-REMOVE: |-
+    &8---------------<prefix>&8---------------
+    &aThe Player &f<otherplayer> &a has been successfully removed.
+    &8---------------<prefix>&8---------------
+  PLAYER-ERROR-DATA: |-
+    &8---------------<prefix>&8---------------
+    &cNo player data found in PlayerData.
+    &8---------------<prefix>&8---------------
