@@ -58,7 +58,7 @@ public class NameMCAPIAdminCMD implements CommandExecutor {
 
             } else if (args[0].equalsIgnoreCase("reload")) {
 
-                if (args.length >= 2) {
+                if (args.length > 1) {
 
                     if (args[1].equalsIgnoreCase("all")) {
                         SubCMDReload.reloadAll(player, plugin);
@@ -86,7 +86,7 @@ public class NameMCAPIAdminCMD implements CommandExecutor {
 
             } else if (args[0].equalsIgnoreCase("check")){
 
-                if (args.length >= 2){
+                if (args.length == 2){
                     SubCMDAdminCheck.check(player, plugin, args[1]);
                 } else  {
                     player.sendMessage(MessagesManager.getSendMSG(plugin, "Check.PLAYER-NULL"));
@@ -95,7 +95,7 @@ public class NameMCAPIAdminCMD implements CommandExecutor {
 
             } else if (args[0].equalsIgnoreCase("removeplayer")){
 
-                if (args.length >= 1){
+                if (args.length == 2){
                     SubCMDAdminRemovePlayer.removeplayer(player, plugin, args[1]);
                 } else  {
                     player.sendMessage(MessagesManager.getSendMSG(plugin, "RemovePlayer.PLAYER-NULL"));

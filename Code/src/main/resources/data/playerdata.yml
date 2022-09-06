@@ -1,0 +1,4 @@
+VOTE-ALLOW:
+  uuid:
+    name: playernick
+    vote: true # or false

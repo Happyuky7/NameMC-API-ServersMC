@@ -117,7 +117,7 @@ public class SubCMDAdminRemovePlayer {
 
         Player target = Bukkit.getPlayer(args);
 
-        if (plugin.getConfig().getBoolean("General.Online-Mode", true)){
+        /*if (plugin.getConfig().getBoolean("General.Online-Mode", true)){
 
             Boolean verifyvote = plugin.getPlayerData().getBoolean("VOTE-ALLOW." + target.getUniqueId() + ".vote");
 
@@ -152,7 +152,7 @@ public class SubCMDAdminRemovePlayer {
 
             }
 
-        }
+        }*/
 
         String uuid = MojangAPIManager.getDataMojanAPITarget(target.getName());
 

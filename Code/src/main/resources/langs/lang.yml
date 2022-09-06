@@ -63,10 +63,10 @@ MSG-Player:
 
 Langs:
   CUSTOM-ERROR: |-
-    &8----------------------------------------------"
-    &7If You Need Help Use the Command: &f/namemc help"
+    &8----------------------------------------------
+    &7If You Need Help Use the Command: &f/namemc help
     &bTo Vote Use the Command: &f/namemc vote"
-    &8----------------------------------------------"
+    &8----------------------------------------------
   VOTING-CMD: |-
     &8----------------------------------------------
     &9Vote in &f<namemcwebvote><serverip>
@@ -87,7 +87,7 @@ Langs:
     &r
   VOTING-ALLOW: |-
     &r 
-    <prefix> &cYou have already voted for the server."
+    <prefix> &cYou have already voted for the server.
     &r
   REMOVE-VOTING: |-
     &r 

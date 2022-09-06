@@ -142,7 +142,7 @@ public class SubCMDVerify {
 
     public static void verify0(Player player, NameMCAPI plugin){
 
-        if (plugin.getConfig().getBoolean("General.Online-Mode", true)){
+        /*if (!plugin.getConfig().getBoolean("General.Online-Mode", true)){
 
             String verifyvote = plugin.getPlayerData().getString("VOTE-ALLOW." + player.getUniqueId() + ".vote");
 
@@ -159,7 +159,7 @@ public class SubCMDVerify {
 
             }
 
-        }
+        }*/
 
         String uuid = MojangAPIManager.getDataMojanAPI(player);
 
@@ -174,7 +174,8 @@ public class SubCMDVerify {
 
         if (!(verifyvote == null)){
 
-            player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.VOTING-ALLOW").replaceAll("<player>", player.getName())
+            player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.VOTING-ALLOW")
+                    .replaceAll("<player>", player.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
                     .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));

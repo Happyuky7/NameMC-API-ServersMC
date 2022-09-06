@@ -6,7 +6,7 @@
 
     <groupId>com.github.happyrogelio7</groupId>
     <artifactId>NameMCAPI</artifactId>
-    <version>1.0.5-DEV-100</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>NameMCAPI</name>
