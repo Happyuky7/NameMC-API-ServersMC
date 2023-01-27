@@ -31,7 +31,7 @@ public class SubCMDVerify {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.VOTING-PLAYER")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
                 if (plugin.getConfig().getBoolean("General.Options.MSG-Player", true)) {
@@ -66,7 +66,7 @@ public class SubCMDVerify {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.NO-VOTING")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -94,7 +94,7 @@ public class SubCMDVerify {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.VOTING-PLAYER")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
                 if (plugin.getConfig().getBoolean("General.Options.MSG-Player", true)) {
@@ -129,7 +129,7 @@ public class SubCMDVerify {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.NO-VOTING")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -177,7 +177,7 @@ public class SubCMDVerify {
             player.sendMessage(MessagesManager.getSendMSG(plugin, "Langs.VOTING-ALLOW")
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         } else {

@@ -24,7 +24,7 @@ public class SubCMDAdminCheck {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             } else if (verifyvote){
@@ -33,7 +33,7 @@ public class SubCMDAdminCheck {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             } else {
@@ -42,7 +42,7 @@ public class SubCMDAdminCheck {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -59,7 +59,7 @@ public class SubCMDAdminCheck {
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         } else if (verifyvote){
@@ -68,7 +68,7 @@ public class SubCMDAdminCheck {
                     .replaceAll("<player<", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         } else {
@@ -77,7 +77,7 @@ public class SubCMDAdminCheck {
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         }

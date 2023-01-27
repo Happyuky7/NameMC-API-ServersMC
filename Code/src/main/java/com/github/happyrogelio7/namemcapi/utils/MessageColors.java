@@ -8,6 +8,13 @@ import java.util.regex.Pattern;
 
 public class MessageColors {
 
+    /*
+     Code by: HappyRogelio7
+     Github: https://github.com/HappyRogelio7
+     License: Custom
+     Link: https://github.com/HappyRogelio7/getMsgColorSpigotClass1
+     */
+
     public static String getMsgColor(String text) {
 
         if (Bukkit.getVersion().contains("1.16") || Bukkit.getVersion().contains("1.16.1")
@@ -17,6 +24,7 @@ public class MessageColors {
                 || Bukkit.getVersion().contains("1.18") || Bukkit.getVersion().contains("1.18.1")
                 || Bukkit.getVersion().contains("1.18.2") || Bukkit.getVersion().contains("1.19")
                 || Bukkit.getVersion().contains("1.19.1") || Bukkit.getVersion().contains("1.19.2")
+                || Bukkit.getVersion().contains("1.19.3")
         ) {
             Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
             Matcher matcher = pattern.matcher(text);

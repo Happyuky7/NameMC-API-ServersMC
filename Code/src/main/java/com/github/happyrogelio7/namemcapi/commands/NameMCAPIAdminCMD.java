@@ -34,7 +34,7 @@ public class NameMCAPIAdminCMD implements CommandExecutor {
             player.sendMessage(MessagesManager.getSendMSG(plugin, "General.No-Permission")
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
             return true;
         }

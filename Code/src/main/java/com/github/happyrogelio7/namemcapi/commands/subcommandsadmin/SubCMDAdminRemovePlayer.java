@@ -52,7 +52,7 @@ public class SubCMDAdminRemovePlayer {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "RemovePlayer.NO-VOTING")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -102,7 +102,7 @@ public class SubCMDAdminRemovePlayer {
                 player.sendMessage(MessagesManager.getSendMSG(plugin, "RemovePlayer.NO-VOTING")
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -127,7 +127,7 @@ public class SubCMDAdminRemovePlayer {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             } else if (verifyvote){
@@ -138,7 +138,7 @@ public class SubCMDAdminRemovePlayer {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             } else {
@@ -147,7 +147,7 @@ public class SubCMDAdminRemovePlayer {
                         .replaceAll("<player>", player.getName())
                         .replaceAll("<otherplayer<", target.getName())
                         .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                        .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                        .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                         .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
             }
@@ -164,7 +164,7 @@ public class SubCMDAdminRemovePlayer {
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         } else if (verifyvote){
@@ -175,7 +175,7 @@ public class SubCMDAdminRemovePlayer {
                     .replaceAll("<player<", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         } else {
@@ -184,7 +184,7 @@ public class SubCMDAdminRemovePlayer {
                     .replaceAll("<player>", player.getName())
                     .replaceAll("<otherplayer<", target.getName())
                     .replaceAll("<namemcwebvote>", plugin.getLangs().getString("General.NAMEMC-VOTE"))
-                    .replaceAll(MessageColors.getMsgColor("<prefix>"), plugin.getLangs().getString("General.Prefix"))
+                    .replaceAll(MessageColors.getMsgColor("<prefix>"), MessageColors.getMsgColor(plugin.getLangs().getString("General.Prefix")))
                     .replaceAll("<serverip>", plugin.getConfig().getString("General.IP")));
 
         }

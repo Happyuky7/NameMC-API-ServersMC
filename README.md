@@ -4,7 +4,7 @@ Use of the NameMC API for Minecraft Servers.
 
 ## [Discord](https://discord.gg/3EebYUyeUX)
 ## [Github](https://github.com/HappyRogelio7/NameMC-API-ServersMC/)
-## [Download 1.8-1.19.2](https://github.com/HappyRogelio7/NameMC-API-ServersMC/releases)
+## [Download 1.8-1.19.3](https://github.com/HappyRogelio7/NameMC-API-ServersMC/releases)
 
 ---
 
@@ -57,7 +57,7 @@ NameMC-API-ServersMC/Code/target/
 
 ---
 
-© copyright HappyRogelio7 2017-2022 ©
+© copyright HappyRogelio7 2017-2023 ©
 RIGHTS RESERVED
 
 ## Special Thanks To

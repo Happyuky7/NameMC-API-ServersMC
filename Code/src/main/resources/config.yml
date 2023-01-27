@@ -3,7 +3,7 @@
 # =================================================================================================
 General:
   Update: true
-  Config: 1.0.5
+  Config: 1.0.6
   Options:
     MSG-Player: true #Configure these messages in lang.yml | This is in Beta!
   Online-Mode: true #your online or semipremium use false.
