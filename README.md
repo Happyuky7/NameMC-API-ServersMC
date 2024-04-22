@@ -4,7 +4,7 @@ Use of the NameMC API for Minecraft Servers.
 
 ### [Discord](https://discord.gg/3EebYUyeUX)
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
-### [Download 1.8-1.20.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
+### [Download 1.8 - 1.20.5](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
 
 ---
 
@@ -18,7 +18,7 @@ Use of the NameMC API for Minecraft Servers.
 <br></br>
 - (Optional) Configure Save Data in `config.yml`.
   - You config `YAML` Required **Restart**.
-  - You config `MongoDB` Required **Restart** or `/namemc reload`.
+  - You config `MongoDB` Required **Restart**.
 <br></br>
 - Restart Your Server.
 
@@ -68,7 +68,7 @@ NameMC-API-ServersMC/Code/target/
 
 ## Aditional Information
 
-[My website](https://happyrogelio7.xyz), My website.
+[My website](https://happy7.xyz), My website.
 
 [Discord](https://discord.gg/3EebYUyeUX), Support My Server Discord.
 
