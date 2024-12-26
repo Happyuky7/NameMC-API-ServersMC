@@ -1,0 +1,50 @@
+
+config-version: 2.0.0-DEV-100
+
+data:
+
+  # Types: YAML, MongoDB (MongoDB is not supported in this version)
+  type: "yaml"
+
+  # YAML configuration
+  yaml:
+    file: "data"
+
+  # MongoDB configuration
+  mongodb:
+    uri: "mongodb://localhost:27017"
+    database: "test"
+    collection: "data"
+
+
+# Server configuration
+settings:
+
+  debug: false
+  update-check: true
+
+  # REQUIRED!
+  # IP your server.
+  # Example: IP: 'hypixel.net' OR IP: 'play.yourdomain.com:25565' OR IP: 'numericip:25565'.
+  ip-server: "play.example.com"
+
+  # RECOMMENDED! Enabled. (In Development)
+  #cooldown-cmd:
+   # enabled: true
+    # Cooldown time in seconds.
+    #time: 900
+
+
+rewards:
+  console-cmd:
+    enabled: true
+    commands:
+      - "give %player% diamond 1"
+      - "lp user %player% parent add NameMC"
+      - "say %player% has voted!"
+
+  player-cmd:
+    enabled: false
+    commands:
+      - "/say %player% has voted!"
+

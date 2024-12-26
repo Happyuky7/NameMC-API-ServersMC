@@ -1,0 +1,7 @@
+name: NameMC-API-ServersMC
+version: '1.0.0'
+main: com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC
+api-version: '1.20'
+authors: [ Happyuky7 ]
+description: NameMC API ServersMC
+website: https://github.com/Happyuky7

@@ -4,7 +4,9 @@ Use of the NameMC API for Minecraft Servers.
 
 ### [Discord](https://discord.gg/3EebYUyeUX)
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
-### [Download 1.8 - 1.20.6](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
+### [Download 1.8 - 1.21.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
+
+### [DEV] [NEW VERSION 2.0.0 (DEV-100) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-100)
 
 ---
 
@@ -72,13 +74,10 @@ NameMC-API-ServersMC/Code/target/
 
 [Discord](https://discord.gg/3EebYUyeUX), Support My Server Discord.
 
-[Kaory Studios](https://kaorystudios.xyz), Kaory Studios website.
-
-[Kaory Studios Discord](https://discord.gg/Gw7m8kC), Support Kaory Studios.
 
 ---
 
-© Copyright Happyuky7 2017-2024 ©
+© Copyright Happyuky7 2017-2025 ©
 RIGHTS RESERVED
 
 ## Special Thanks To

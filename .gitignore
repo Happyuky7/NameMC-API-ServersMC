@@ -1,5 +1,6 @@
 # User-specific stuff
 .idea/
+.vscode/
 
 *.iml
 *.ipr
@@ -8,10 +9,10 @@
 # IntelliJ
 out/
 
-# Compiled class file
+# Compiled class files
 *.class
 
-# Log file
+# Log files
 *.log
 
 # BlueJ files
@@ -25,12 +26,10 @@ out/
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-*~
-
-# temporary files which can be created if a process still has a handle open of a deleted file
+# Temporary files which can be created if a process still has a handle open on a deleted file
 .fuse_hidden*
 
 # KDE directory preferences
@@ -42,7 +41,7 @@ hs_err_pid*
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# General
+# General system files
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -75,10 +74,10 @@ Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
-# Dump file
+# Dump files
 *.stackdump
 
-# Folder config file
+# Folder config files
 [Dd]esktop.ini
 
 # Recycle Bin used on file shares
@@ -94,8 +93,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Maven target directory
 target/
 
+# Maven build files and backup files
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
