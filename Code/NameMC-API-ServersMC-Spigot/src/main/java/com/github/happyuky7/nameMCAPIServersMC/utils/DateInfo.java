@@ -9,7 +9,7 @@ public class DateInfo {
         int year = currentDate.getYear();
         int month = currentDate.getMonthValue();
         int day = currentDate.getDayOfMonth();
-        String formattedDate = "D" + String.format("%02d", new Object[] { Integer.valueOf(day) }) + "/" + String.format("%02d", new Object[] { Integer.valueOf(month) }) + "/" + year;
+        String formattedDate = String.format("%02d", new Object[] { Integer.valueOf(day) }) + "/" + String.format("%02d", new Object[] { Integer.valueOf(month) }) + "/" + year;
         return formattedDate;
     }
 

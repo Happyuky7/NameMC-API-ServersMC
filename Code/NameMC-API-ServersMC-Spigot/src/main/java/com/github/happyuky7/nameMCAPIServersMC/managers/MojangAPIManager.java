@@ -18,6 +18,8 @@ public final class MojangAPIManager {
             return object.get("id").getAsString();
 
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error ID: 001");
             return null;
         }
 

@@ -11,6 +11,8 @@ public class YamlDataManager {
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".voted", voted);
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".claim-reward", claimReward);
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".date", DateInfo.getSystemDate());
+
+        NameMCAPIServersMC.getInstance().getData().save();
     }
 
     public static void setVote(String username, String uuid, boolean voted) {

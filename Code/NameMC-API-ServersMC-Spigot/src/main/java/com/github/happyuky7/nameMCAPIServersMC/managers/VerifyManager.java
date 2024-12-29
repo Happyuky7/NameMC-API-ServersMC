@@ -5,36 +5,83 @@ import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
 public class VerifyManager {
 
     // Verify the vote
-    public static boolean verify(String type, String username, String uuid, String ip) {
+    public static boolean verifyVote(String type, String username, String uuid, String ip) {
 
         if (type.equalsIgnoreCase("YAML")) {
-            return YamlVerify(username, uuid, ip);
+            return YamlVerifyVote(username, uuid, ip);
         } else if (type.equalsIgnoreCase("MongoDB")) {
-            return MongoDBVerify(username, uuid, ip);
+            return MongoDBVerifyVote(username, uuid, ip);
         } else {
             return false;
         }
     }
 
     // Verify the vote using YAML
-    public static boolean YamlVerify(String username, String uuid, String ip) {
+    public static boolean YamlVerifyVote(String username, String uuid, String ip) {
+        System.out.println("YAML Verify");
         if (YamlDataManager.hasVoted(uuid)) {
+            System.out.println("Already Voted");
             return true;
         }
 
-        if (NameMCAPIGET.getVotes(uuid, ip).equals(Boolean.valueOf(true).toString())) {
+        System.out.println("NameMCAPIGET.getVotes(uuid, ip): " + NameMCAPIGET.getVote(uuid, ip));
+        if (NameMCAPIGET.getVote(uuid, ip).equals(Boolean.valueOf(true).toString())) {
             YamlDataManager.setVote(username, uuid, true);
+            System.out.println("Voted");
             return true;
         }
 
+        System.out.println("Not Voted");
         return false;
     }
 
     // Verify the vote using MongoDB
-    public static boolean MongoDBVerify(String username, String uuid, String ip) {
+    public static boolean MongoDBVerifyVote(String username, String uuid, String ip) {
         // MongoDB code here
         return false;
     }
 
 
+    // Verify claim reward
+    public static boolean verifyClaimReward(String type, String uuid) {
+
+        if (type.equalsIgnoreCase("YAML")) {
+            return YamlVerifyClaimReward(uuid);
+        } else if (type.equalsIgnoreCase("MongoDB")) {
+            return MongoDBVerifyClaimReward(uuid);
+        } else {
+            return false;
+        }
+    }
+
+    // Verify the claim reward using YAML
+    public static boolean YamlVerifyClaimReward(String uuid) {
+        if (YamlDataManager.hasClaimedReward(uuid)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // Verify the claim reward using MongoDB
+    public static boolean MongoDBVerifyClaimReward(String uuid) {
+        // MongoDB code here
+        return false;
+    }
+
+
+    // Set the claim reward
+    public static void setClaimReward(String type, String uuid, boolean claimReward) {
+
+        if (type.equalsIgnoreCase("YAML")) {
+            YamlDataManager.setClaimReward(uuid, claimReward);
+        } else if (type.equalsIgnoreCase("MongoDB")) {
+            MongoDBSetClaimReward(uuid, claimReward);
+        }
+    }
+
+    // Set the claim reward using MongoDB
+    public static void MongoDBSetClaimReward(String uuid, boolean claimReward) {
+        // MongoDB code here
+    }
 }

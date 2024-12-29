@@ -1,6 +1,7 @@
 package com.github.happyuky7.nameMCAPIServersMC.commands;
 
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
+import com.github.happyuky7.nameMCAPIServersMC.managers.MojangAPIManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.RewardsManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.VerifyManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
@@ -55,7 +56,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-100"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-107"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -76,22 +77,67 @@ public class NameMCAPICMD implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("verify")) {
 
-            if (VerifyManager.verify(
+            String uuid;
+            if (NameMCAPIServersMC.getInstance().getConfig().getString("settings.online-mode").equalsIgnoreCase("true")) {
+                uuid = player.getUniqueId().toString();
+            } else {
+                try {
+                    uuid = MojangAPIManager.getUUID(player.getName());
+                } catch (Exception e) {
+                    player.sendMessage(MessageColors.getMsgColor(" "));
+                    player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));
+                    player.sendMessage(MessageColors.getMsgColor(" "));
+                    player.sendMessage(MessageColors.getMsgColor(" &7- &fAn error occurred while verifying your vote!"));
+                    player.sendMessage(MessageColors.getMsgColor(" "));
+                    player.sendMessage(MessageColors.getMsgColor("&cError ID: 002"));
+                    return true;
+                }
+            }
+
+            System.out.println("Verify");
+            System.out.println(VerifyManager.verifyVote(
                     NameMCAPIServersMC.typeData,
                     player.getName(),
-                    player.getUniqueId().toString(),
+                    uuid,
+                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")));
+
+
+            if (VerifyManager.verifyVote(
+                    NameMCAPIServersMC.typeData,
+                    player.getName(),
+                    uuid,
                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))) {
 
-                // Rewards
+
                 if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("rewards.enabled")) {
-                    RewardsManager.give(player);
+
+                    if (!VerifyManager.verifyClaimReward(
+                            NameMCAPIServersMC.typeData,
+                            uuid)) {
+
+                        RewardsManager.give(player);
+                        VerifyManager.setClaimReward(
+                                NameMCAPIServersMC.typeData,
+                                uuid,
+                                true
+                        );
+
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have successfully verified your vote!"));
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+
+                    } else {
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have already claimed your reward!"));
+                        player.sendMessage(MessageColors.getMsgColor(" "));
+                    }
+
                 }
 
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have successfully verified your vote!"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
             } else {
                 player.sendMessage(MessageColors.getMsgColor(" "));
                 player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));

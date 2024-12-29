@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-DEV-101
+config-version: 2.0.0-DEV-107
 
 data:
 
@@ -23,12 +23,27 @@ settings:
 
   # Debug mode.
   # This is designed more for developers.
+  # Default: false
   debug: false
 
+  # Server IP
   # REQUIRED!
   # IP your server.
   # Example: IP: 'hypixel.net' OR IP: 'play.yourdomain.com:25565' OR IP: 'numericip:25565'.
   ip-server: "play.example.com"
+
+  # Online Mode
+  # REQUIRED!
+  # Q: What is this?
+  # A: It is a function to verify the player's uuid through the Mojang API.
+  #    For servers that are not premium and do not have a login system that
+  #    validates uuid of premium players, if this is your case set the value to “false”.
+  # -----------------------------------------------------
+  # If your server is no-premium, set the value to "false".
+  # If your server is premium, set the value to "true".
+  # -----------------------------------------------------
+  # Default: true
+  online-mode: true
 
   langs:
     autoDownload: true # Auto download the language file from the GitHub repository. (Recommended enabled)
@@ -43,6 +58,7 @@ settings:
 # Rewards configuration
 rewards:
   # Enable or disable the reward system (Global options).
+  # Default: true
   enabled: true
 
   # Command executed by the console.

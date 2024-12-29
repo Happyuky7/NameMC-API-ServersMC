@@ -32,7 +32,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         config = new FileManager(this, "config");
 
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-DEV-101")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-DEV-107")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
@@ -53,23 +53,30 @@ public final class NameMCAPIServersMC extends JavaPlugin {
 
         } else {
 
+            System.out.println("Error ID: 005");
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Data type is invalid! Please set it to either 'yaml' or 'mongodb'!"));
             Bukkit.getPluginManager().disablePlugin(this);
 
         }
 
-        if (getConfig().getBoolean("settings.lang.autoDownload")) {
-            DownloadTranslations.downloadTranslations();
+        if (getConfig().getBoolean("settings.langs.autoDownload")) {
+            try {
+                DownloadTranslations.downloadTranslations();
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Error ID: lang-002");
+            }
         }
 
         // Check if the language file exists
         // BETA OPTION
-        if (!checkLangFileExists(getConfig().getString("settings.lang.id"))) {
+        if (!checkLangFileExists(getConfig().getString("settings.langs.lang"))) {
+            System.out.println("Error ID: lang-001");
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] The language file with the ID '" + getConfig().getString("settings.lang.id") + "' does not exist!"));
             Bukkit.getPluginManager().disablePlugin(this);
         } else {
 
-            langs = new FileManager(this, "langs/" + getConfig().getString("settings.lang.id"));
+            langs = new FileManager(this, "langs/" + getConfig().getString("settings.langs.lang"));
 
         }
 
