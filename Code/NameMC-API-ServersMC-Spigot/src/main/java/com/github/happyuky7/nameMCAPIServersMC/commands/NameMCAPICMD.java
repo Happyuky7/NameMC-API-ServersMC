@@ -1,6 +1,7 @@
 package com.github.happyuky7.nameMCAPIServersMC.commands;
 
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
+import com.github.happyuky7.nameMCAPIServersMC.managers.RewardsManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.VerifyManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
@@ -42,8 +43,10 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc &7- &fVote for the server!"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc help &7- &fHelp command!"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc info &7- &fPlugin information!"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc vote &7- &fVote for the server!"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc verify &7- &fVerify your vote!"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc reload &7- &fReload the plugin!"));
             player.sendMessage(MessageColors.getMsgColor(" "));
             return true;
         }
@@ -73,7 +76,16 @@ public class NameMCAPICMD implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("verify")) {
 
-            if (VerifyManager.verify(NameMCAPIServersMC.typeData, player.getName(), player.getUniqueId().toString(), NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))) {
+            if (VerifyManager.verify(
+                    NameMCAPIServersMC.typeData,
+                    player.getName(),
+                    player.getUniqueId().toString(),
+                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))) {
+
+                // Rewards
+                if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("rewards.enabled")) {
+                    RewardsManager.give(player);
+                }
 
                 player.sendMessage(MessageColors.getMsgColor(" "));
                 player.sendMessage(MessageColors.getMsgColor(" &9&lNameMCAPIServersMC &7- &fVerify"));

@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-DEV-100
+config-version: 2.0.0-DEV-101
 
 data:
 
@@ -7,10 +7,11 @@ data:
   type: "yaml"
 
   # YAML configuration
+  # For security reasons, the file name cannot currently be changed.
   yaml:
-    file: "data"
+    file: "data" # Do not change this value.
 
-  # MongoDB configuration
+  # MongoDB configuration (MongoDB is not supported in this version)
   mongodb:
     uri: "mongodb://localhost:27017"
     database: "test"
@@ -20,13 +21,18 @@ data:
 # Server configuration
 settings:
 
+  # Debug mode.
+  # This is designed more for developers.
   debug: false
-  update-check: true
 
   # REQUIRED!
   # IP your server.
   # Example: IP: 'hypixel.net' OR IP: 'play.yourdomain.com:25565' OR IP: 'numericip:25565'.
   ip-server: "play.example.com"
+
+  langs:
+    autoDownload: true # Auto download the language file from the GitHub repository. (Recommended enabled)
+    lang: "en_US" # Language file. (Default: en_US)
 
   # RECOMMENDED! Enabled. (In Development)
   #cooldown-cmd:
@@ -34,8 +40,12 @@ settings:
     # Cooldown time in seconds.
     #time: 900
 
-
+# Rewards configuration
 rewards:
+  # Enable or disable the reward system (Global options).
+  enabled: true
+
+  # Command executed by the console.
   console-cmd:
     enabled: true
     commands:
@@ -43,8 +53,16 @@ rewards:
       - "lp user %player% parent add NameMC"
       - "say %player% has voted!"
 
+  # Command executed by the player.
   player-cmd:
     enabled: false
     commands:
       - "/say %player% has voted!"
+
+  # Player send message in chat.
+  player-msg:
+    enabled: false
+    messages:
+      - "You have voted!"
+      - "You have received a reward!"
 

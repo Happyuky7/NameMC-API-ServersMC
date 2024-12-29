@@ -1,9 +1,13 @@
 package com.github.happyuky7.nameMCAPIServersMC;
 
+import com.github.happyuky7.nameMCAPIServersMC.commands.NameMCAPICMD;
 import com.github.happyuky7.nameMCAPIServersMC.files.FileManager;
+import com.github.happyuky7.nameMCAPIServersMC.utils.DownloadTranslations;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
 
 public final class NameMCAPIServersMC extends JavaPlugin {
 
@@ -15,6 +19,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
 
     public FileManager config;
     public FileManager dataYaml;
+    public FileManager langs;
 
     public static String typeData;
 
@@ -27,7 +32,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         config = new FileManager(this, "config");
 
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-DEV-100")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-DEV-101")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
@@ -53,6 +58,23 @@ public final class NameMCAPIServersMC extends JavaPlugin {
 
         }
 
+        if (getConfig().getBoolean("settings.lang.autoDownload")) {
+            DownloadTranslations.downloadTranslations();
+        }
+
+        // Check if the language file exists
+        // BETA OPTION
+        if (!checkLangFileExists(getConfig().getString("settings.lang.id"))) {
+            Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] The language file with the ID '" + getConfig().getString("settings.lang.id") + "' does not exist!"));
+            Bukkit.getPluginManager().disablePlugin(this);
+        } else {
+
+            langs = new FileManager(this, "langs/" + getConfig().getString("settings.lang.id"));
+
+        }
+
+        getCommand("namemc").setExecutor(new NameMCAPICMD());
+
 
 
     }
@@ -70,6 +92,27 @@ public final class NameMCAPIServersMC extends JavaPlugin {
 
     public FileManager getData() {
         return dataYaml;
+    }
+
+    public FileManager getLangs() {
+        return langs;
+    }
+
+    /**
+     * Checks if the language file exists in the langs folder.
+     *
+     * @param langId the language file ID.
+     * @return true if the file exists, false otherwise.
+     */
+    public static boolean checkLangFileExists(String langId) {
+
+        File langsDir = new File(instance.getDataFolder(), "langs");
+        if (!langsDir.exists()) {
+            langsDir.mkdirs();
+        }
+
+        File langFile = new File(langsDir, langId + ".yml");
+        return langFile.exists();
     }
 
 }

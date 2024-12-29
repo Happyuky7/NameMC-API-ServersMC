@@ -10,12 +10,10 @@ public class VerifyManager {
         if (type.equalsIgnoreCase("YAML")) {
             return YamlVerify(username, uuid, ip);
         } else if (type.equalsIgnoreCase("MongoDB")) {
-            // MongoDB code here
+            return MongoDBVerify(username, uuid, ip);
         } else {
             return false;
         }
-
-        return false;
     }
 
     // Verify the vote using YAML

@@ -3,6 +3,7 @@ package com.github.happyuky7.nameMCAPIServersMC.utils;
 import java.time.LocalDate;
 
 public class DateInfo {
+
     public static String getSystemDate() {
         LocalDate currentDate = LocalDate.now();
         int year = currentDate.getYear();
@@ -62,5 +63,6 @@ public class DateInfo {
         String formattedDate = format.replace("Y", String.valueOf(year));
         return formattedDate;
     }
+
 }
 

@@ -6,7 +6,7 @@
 
     <groupId>com.github.happyuky7</groupId>
     <artifactId>NameMC-API-ServerSMC-SPIGOT</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.0-DEV-101</version>
     <packaging>jar</packaging>
 
     <name>NameMC-API-ServersMC-SPIGOT</name>
@@ -32,22 +32,31 @@
     </repositories>
 
     <dependencies>
+        <!-- SpigotMC -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.20.1-R0.1-SNAPSHOT</version>
+            <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <!-- PlaceholderAPI -->
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
             <version>2.11.5</version>
             <scope>provided</scope>
         </dependency>
+        <!-- MongoDB -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>4.0.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
         </dependency>
     </dependencies>
 

@@ -1,7 +1,14 @@
 name: NameMC-API-ServersMC
-version: '1.0.0'
+version: '${project.version}'
 main: com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC
-api-version: '1.20'
+api-version: '1.16'
 authors: [ Happyuky7 ]
 description: NameMC API ServersMC
 website: https://github.com/Happyuky7
+commands:
+
+  namemc:
+    aliases:
+      - namemcapi
+      - namemcapiserversmc
+    usage: /<command>
