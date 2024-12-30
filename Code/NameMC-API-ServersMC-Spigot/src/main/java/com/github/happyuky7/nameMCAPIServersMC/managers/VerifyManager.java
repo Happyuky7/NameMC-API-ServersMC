@@ -1,6 +1,7 @@
 package com.github.happyuky7.nameMCAPIServersMC.managers;
 
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
+import com.github.happyuky7.nameMCAPIServersMC.managers.gets.NameMCAPIGET;
 
 public class VerifyManager {
 

@@ -1,4 +1,4 @@
-name: NameMC-API-ServersMC
+name: NameMCAPI
 version: '${project.version}'
 main: com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC
 api-version: '1.16'

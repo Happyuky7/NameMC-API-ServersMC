@@ -1,9 +1,6 @@
-package com.github.happyuky7.nameMCAPIServersMC.managers;
+package com.github.happyuky7.nameMCAPIServersMC.managers.gets;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -22,6 +19,7 @@ public class NameMCAPIGET {
         return "https://api.namemc.com/server/<server-ip>/likes";
     }
 
+    // Get the vote of a player
     public static String getVote(String uuid, String serverIP) {
         try {
             String url = getURLVote()
@@ -64,38 +62,10 @@ public class NameMCAPIGET {
         return Boolean.valueOf(false).toString();
     }
 
-    /*public static String getVotes(String uuid, String serverIP) {
 
-        System.out.println("getVotes: " + uuid + " " + serverIP);
-        if (uuid == null) return Boolean.valueOf(false).toString();
-
-        System.out.println("start try");
-        try {
-            System.out.println("start try 2");
-            String url = getURLVote()
-                    .replaceAll("<server-ip>", serverIP)
-                    .replaceAll("<uuid>", uuid);
-            HttpURLConnection connection = (HttpURLConnection)(new URL(url)).openConnection();
-            connection.setRequestMethod("GET");
-            int responseCode = connection.getResponseCode();
-            System.out.println("responseCode: " + responseCode);
-            if (responseCode == 200) {
-                System.out.println("responseCode == 200");
-                return Boolean.valueOf(true).toString();
-            } else {
-                System.out.println("responseCode != 200");
-                return Boolean.valueOf(false).toString();
-            }
-        } catch (Exception e) {
-            System.out.println("catch");
-            e.printStackTrace();
-        }
-
-        System.out.println("return false");
-        return Boolean.valueOf(false).toString();
-    }*/
-
-    public static String getAllVotesUUIDs(String serverIP) {
+    // in the future and for now, this method is not used
+    // Recode this method to found correct.
+    /*public static String getAllVotesUUIDs(String serverIP) {
         try {
 
             String url = getURLALLVotes()
@@ -160,6 +130,6 @@ public class NameMCAPIGET {
             return -1;
         }
 
-    }
+    }*/
 
 }

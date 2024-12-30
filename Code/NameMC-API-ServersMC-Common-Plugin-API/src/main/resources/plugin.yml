@@ -1,0 +1,5 @@
+name: NameMCAPI-CommonPluginAPI
+version: '${project.version}'
+main: com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.NameMCAPIServersMCCommonPluginAPI
+api-version: 1.16
+

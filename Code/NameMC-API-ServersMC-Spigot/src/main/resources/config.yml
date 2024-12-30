@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-DEV-107
+config-version: 2.0.0-DEV-108
 
 data:
 
@@ -50,10 +50,11 @@ settings:
     lang: "en_US" # Language file. (Default: en_US)
 
   # RECOMMENDED! Enabled. (In Development)
-  #cooldown-cmd:
-   # enabled: true
+  cooldown:
+    enabled: true
     # Cooldown time in seconds.
-    #time: 900
+    # Default: 300 (5 minutes)
+    time: 300
 
 # Rewards configuration
 rewards:

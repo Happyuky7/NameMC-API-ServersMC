@@ -1,0 +1,6 @@
+{
+  "id": "NameMCAPI-CommonPluginAPI",
+  "name": "NameMCAPI-CommonPluginAPI",
+  "version": "${project.version}",
+  "main": "com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.NameMCAPIServersMCCommonPluginAPI"
+}
