@@ -1,4 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform;
+package com.github.happyuky7.nameMCAPIServersMCCommon.platform;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

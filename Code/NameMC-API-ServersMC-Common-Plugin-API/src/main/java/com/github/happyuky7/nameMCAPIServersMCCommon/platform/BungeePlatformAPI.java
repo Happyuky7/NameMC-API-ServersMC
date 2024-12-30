@@ -1,4 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform;
+package com.github.happyuky7.nameMCAPIServersMCCommon.platform;
 
 import net.md_5.bungee.api.plugin.Plugin;
 

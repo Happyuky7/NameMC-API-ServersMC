@@ -19,7 +19,7 @@ public class DownloadTranslations {
     // URL Base for the GitHub API to get the list of available translations
     // https://api.github.com/repos/<username>/<repository>/contents/langs
     private static final String GITHUB_LANGS_API_URL = "https://api.github.com/repos/Happyuky7/NameMC-API-ServersMC/contents/langs";
-    private static final String LOCAL_LANGS_PATH = "plugins/NameMC-API-ServersMC/langs/";
+    private static final String LOCAL_LANGS_PATH = "plugins/NameMCAPI/langs/";
 
     // Download the translations from GitHub
     public static void downloadTranslations() {

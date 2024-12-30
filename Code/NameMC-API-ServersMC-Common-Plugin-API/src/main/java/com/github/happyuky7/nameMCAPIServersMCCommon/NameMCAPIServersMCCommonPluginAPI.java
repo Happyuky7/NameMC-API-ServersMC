@@ -1,18 +1,18 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI;
+package com.github.happyuky7.nameMCAPIServersMCCommon;
 
-import com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform.PlatformAPI;
+import com.github.happyuky7.nameMCAPIServersMCCommon.platform.PlatformAPI;
 
 public class NameMCAPIServersMCCommonPluginAPI {
 
     private static PlatformAPI platformAPI;
 
     public static void onEnableSpigot(org.bukkit.plugin.java.JavaPlugin plugin) {
-        platformAPI = new com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform.SpigotPlatformAPI(plugin);
+        platformAPI = new com.github.happyuky7.nameMCAPIServersMCCommon.platform.SpigotPlatformAPI(plugin);
         platformAPI.onEnable();
     }
 
     public static void onEnableBungee(net.md_5.bungee.api.plugin.Plugin plugin) {
-        platformAPI = new com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform.BungeePlatformAPI(plugin);
+        platformAPI = new com.github.happyuky7.nameMCAPIServersMCCommon.platform.BungeePlatformAPI(plugin);
         platformAPI.onEnable();
     }
 

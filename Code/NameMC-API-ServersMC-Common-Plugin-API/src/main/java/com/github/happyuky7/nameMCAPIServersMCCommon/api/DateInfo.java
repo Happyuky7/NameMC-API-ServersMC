@@ -1,4 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api;
+package com.github.happyuky7.nameMCAPIServersMCCommon.api;
 
 import java.time.LocalDate;
 

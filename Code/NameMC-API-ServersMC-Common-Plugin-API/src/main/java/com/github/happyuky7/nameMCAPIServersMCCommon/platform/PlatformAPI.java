@@ -1,4 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.platform;
+package com.github.happyuky7.nameMCAPIServersMCCommon.platform;
 
 public interface PlatformAPI {
     void onEnable();

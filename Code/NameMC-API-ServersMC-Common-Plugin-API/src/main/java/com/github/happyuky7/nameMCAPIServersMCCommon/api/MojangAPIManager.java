@@ -1,4 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api;
+package com.github.happyuky7.nameMCAPIServersMCCommon.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

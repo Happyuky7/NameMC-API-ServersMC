@@ -1,8 +1,4 @@
-package com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api;
-
-import com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api.NameMCAPIGET;
-import com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api.MojangAPIManager;
-import com.github.happyuky7.nameMCAPIServersMCCommonPluginAPI.api.DateInfo;
+package com.github.happyuky7.nameMCAPIServersMCCommon.api;
 
 public class NameMCAPI {
 
