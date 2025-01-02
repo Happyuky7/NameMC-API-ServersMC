@@ -20,7 +20,7 @@ public class NameMCAPIGET {
     }
 
     // Get the vote of a player
-    public static String getVote(String uuid, String serverIP) {
+    public static boolean getVote(String uuid, String serverIP) {
         try {
             String url = getURLVote()
                     .replaceAll("<server-ip>", serverIP)
@@ -47,19 +47,19 @@ public class NameMCAPIGET {
                 boolean hasVoted = Boolean.parseBoolean(response.toString());
                 //System.out.println("hasVoted: " + hasVoted);
 
-                return Boolean.valueOf(hasVoted).toString();
+                return hasVoted;
 
             } else {
                 //System.out.println("responseCode != 200");
                 //System.out.println("Error ID: 003");
-                return Boolean.valueOf(false).toString();
+                return false;
             }
         } catch (Exception e) {
             e.printStackTrace();
             //System.out.println("Error ID: 004");
         }
 
-        return Boolean.valueOf(false).toString();
+        return false;
     }
 
 

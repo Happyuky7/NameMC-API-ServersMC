@@ -1,8 +1,12 @@
 package com.github.happyuky7.nameMCAPIServersMCCommon;
 
+import com.github.happyuky7.nameMCAPIServersMCCommon.api.CooldownManager;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.NameMCAPIGET;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.MojangAPIManager;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.DateInfo;
+
+import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * The main class of the NameMCAPI which provides various utility methods to interact with external APIs
@@ -14,6 +18,18 @@ import com.github.happyuky7.nameMCAPIServersMCCommon.api.DateInfo;
 public class NameMCAPI {
 
     private static NameMCAPI instance;
+
+    /**
+     * The DateAPI instance which provides methods to get date information.
+     */
+
+    public static final DateAPI DATE_API = new NameMCAPI().new DateAPI();
+
+    /**
+     * The CooldownAPI instance which provides methods to manage cooldowns.
+     */
+
+    public static final CooldownAPI COOLDOWN_API = new NameMCAPI().new CooldownAPI();
 
     /**
      * Returns the singleton instance of the NameMCAPI class.
@@ -38,16 +54,26 @@ public class NameMCAPI {
     }
 
     /**
+     * Returns a new instance of the CooldownAPI class, which provides methods to manage cooldowns.
+     *
+     * @return a new CooldownAPI instance.
+     */
+    public CooldownAPI getCooldown() {
+        return new CooldownAPI();
+    }
+
+    /**
      * Retrieves vote information for a player based on their UUID and the server IP.
      *
      * @param uuid the UUID of the player.
      * @param serverip the IP address of the server.
      */
-    public void getVote(String uuid, String serverip) {
+    public boolean getVote(String uuid, String serverip) {
         try {
-            NameMCAPIGET.getVote(uuid, serverip);
+            return NameMCAPIGET.getVote(uuid, serverip);
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -144,6 +170,75 @@ public class NameMCAPI {
          */
         public String dateYear(String format) {
             return DateInfo.getSystemDateYear(format);
+        }
+    }
+
+
+    /**
+     * The CooldownAPI class provides methods for managing cooldowns.
+     */
+    public class CooldownAPI {
+
+        /**
+         * HashMap containing the cooldowns for each player.
+         */
+
+        public HashMap<UUID, Long> cooldowns = CooldownManager.cooldowns;
+
+        /**
+         * Sets a cooldown for a player based on their UUID.
+         *
+         * @param uuid the UUID of the player.
+         * @param seconds the duration of the cooldown in seconds.
+         */
+        public void setCooldown(UUID uuid, int seconds) {
+            CooldownManager.setCooldown(uuid, seconds);
+        }
+
+        /**
+         * Checks if a player has a cooldown based on their UUID.
+         *
+         * @param uuid the UUID of the player.
+         * @return true if the player has no cooldown, false otherwise.
+         */
+        public boolean checkCooldown(UUID uuid) {
+            return CooldownManager.checkCooldown(uuid);
+        }
+
+        /**
+         * Gets the remaining time of a player's cooldown based on their UUID.
+         *
+         * @param uuid the UUID of the player.
+         * @return the remaining time of the player's cooldown in seconds.
+         */
+        public long getCooldown(UUID uuid) {
+            return CooldownManager.getCooldown(uuid);
+        }
+
+        /**
+         * Removes the cooldown of a player based on their UUID.
+         *
+         * @param uuid the UUID of the player.
+         */
+        public void removeCooldown(UUID uuid) {
+            CooldownManager.removeCooldown(uuid);
+        }
+
+        /**
+         * Clears all cooldowns.
+         */
+        public void clearCooldowns() {
+            CooldownManager.clearCooldowns();
+        }
+
+        /**
+         * Returns the formatted cooldown time in hours, minutes, and seconds.
+         *
+         * @param time the time in seconds.
+         * @return the formatted cooldown time.
+         */
+        public String getFormattedCooldown(long time) {
+            return CooldownManager.getFormattedCooldown(time);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.github.happyuky7.nameMCAPIServersMC.managers;
 
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
-import com.github.happyuky7.nameMCAPIServersMC.managers.gets.NameMCAPIGET;
+import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 
 public class VerifyManager {
 
@@ -25,8 +25,8 @@ public class VerifyManager {
             return true;
         }
 
-        System.out.println("NameMCAPIGET.getVotes(uuid, ip): " + NameMCAPIGET.getVote(uuid, ip));
-        if (NameMCAPIGET.getVote(uuid, ip).equals(Boolean.valueOf(true).toString())) {
+        System.out.println("NameMCAPIGET.getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
+        if (NameMCAPI.getInstance().getVote(uuid, ip)) {
             YamlDataManager.setVote(username, uuid, true);
             System.out.println("Voted");
             return true;

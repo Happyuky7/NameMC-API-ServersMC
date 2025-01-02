@@ -1,11 +1,12 @@
 package com.github.happyuky7.nameMCAPIServersMC.commands;
 
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
-import com.github.happyuky7.nameMCAPIServersMC.managers.cooldown.CooldownManager;
-import com.github.happyuky7.nameMCAPIServersMC.managers.gets.MojangAPIManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.RewardsManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.VerifyManager;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
+import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
+import com.github.happyuky7.nameMCAPIServersMCCommon.api.CooldownManager;
+import com.github.happyuky7.nameMCAPIServersMCCommon.api.MojangAPIManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -80,7 +81,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-109"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-110"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -101,11 +102,11 @@ public class NameMCAPICMD implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("verify")) {
 
-            if (!CooldownManager.checkCooldown(player)) {
+            if (!NameMCAPI.COOLDOWN_API.checkCooldown(player.getUniqueId())) {
                 player.sendMessage(MessageColors.getMsgColor(" "));
                 player.sendMessage(MessageColors.getMsgColor(" &9&ameMCAPIServersMC &7- &fVerify"));
                 player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fYou must wait " + CooldownManager.getFormattedCooldown(CooldownManager.getCooldown(player)) + " before verifying your vote!"));
+                player.sendMessage(MessageColors.getMsgColor(" &7- &fYou must wait " + CooldownManager.getFormattedCooldown(CooldownManager.getCooldown(player.getUniqueId())) + " before verifying your vote!"));
                 player.sendMessage(MessageColors.getMsgColor(" "));
                 return true;
             }
@@ -129,7 +130,7 @@ public class NameMCAPICMD implements CommandExecutor {
             }
 
             if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.cooldown.enabled")) {
-                CooldownManager.setCooldown(player, NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
+                CooldownManager.setCooldown(player.getUniqueId(), NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
             }
 
             System.out.println("Verify");

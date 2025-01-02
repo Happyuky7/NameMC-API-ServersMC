@@ -1,7 +1,7 @@
 package com.github.happyuky7.nameMCAPIServersMC.managers.data;
 
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
-import com.github.happyuky7.nameMCAPIServersMC.utils.DateInfo;
+import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 
 public class YamlDataManager {
 
@@ -10,7 +10,7 @@ public class YamlDataManager {
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".username", username);
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".voted", voted);
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".claim-reward", claimReward);
-        NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".date", DateInfo.getSystemDate());
+        NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".date", NameMCAPI.DATE_API.date());
 
         NameMCAPIServersMC.getInstance().getData().save();
     }
