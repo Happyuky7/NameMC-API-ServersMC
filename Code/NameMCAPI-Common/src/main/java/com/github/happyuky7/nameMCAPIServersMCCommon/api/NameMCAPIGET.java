@@ -31,7 +31,7 @@ public class NameMCAPIGET {
 
             if (responseCode == 200) {
 
-                System.out.println("responseCode == 200");
+                //System.out.println("responseCode == 200");
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String inputLine;
@@ -45,18 +45,18 @@ public class NameMCAPIGET {
                 //JsonObject jsonResponse = gson.fromJson(response.toString(), JsonObject.class);
 
                 boolean hasVoted = Boolean.parseBoolean(response.toString());
-                System.out.println("hasVoted: " + hasVoted);
+                //System.out.println("hasVoted: " + hasVoted);
 
                 return Boolean.valueOf(hasVoted).toString();
 
             } else {
-                System.out.println("responseCode != 200");
-                System.out.println("Error ID: 003");
+                //System.out.println("responseCode != 200");
+                //System.out.println("Error ID: 003");
                 return Boolean.valueOf(false).toString();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error ID: 004");
+            //System.out.println("Error ID: 004");
         }
 
         return Boolean.valueOf(false).toString();

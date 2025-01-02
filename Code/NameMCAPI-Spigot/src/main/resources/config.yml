@@ -1,0 +1,85 @@
+
+config-version: 2.0.0-Spigot-DEV-110
+
+data:
+
+  # Types: YAML, MongoDB (MongoDB is not supported in this version)
+  type: "yaml"
+
+  # YAML configuration
+  # For security reasons, the file name cannot currently be changed.
+  yaml:
+    file: "data" # Do not change this value.
+
+  # MongoDB configuration (MongoDB is not supported in this version)
+  mongodb:
+    uri: "mongodb://localhost:27017"
+    database: "test"
+    collection: "data"
+
+
+# Server configuration
+settings:
+
+  # Debug mode.
+  # This is designed more for developers.
+  # Default: false
+  debug: false
+
+  # Server IP
+  # REQUIRED!
+  # IP your server.
+  # Example: IP: 'hypixel.net' OR IP: 'play.yourdomain.com:25565' OR IP: 'numericip:25565'.
+  ip-server: "play.example.com"
+
+  # Online Mode
+  # REQUIRED!
+  # Q: What is this?
+  # A: It is a function to verify the player's uuid through the Mojang API.
+  #    For servers that are not premium and do not have a login system that
+  #    validates uuid of premium players, if this is your case set the value to “false”.
+  # -----------------------------------------------------
+  # If your server is no-premium, set the value to "false".
+  # If your server is premium, set the value to "true".
+  # -----------------------------------------------------
+  # Default: true
+  online-mode: true
+
+  langs:
+    autoDownload: true # Auto download the language file from the GitHub repository. (Recommended enabled)
+    lang: "en_US" # Language file. (Default: en_US)
+
+  # RECOMMENDED! Enabled. (In Development)
+  cooldown:
+    enabled: true
+    # Cooldown time in seconds.
+    # Default: 300 (5 minutes)
+    time: 300
+
+# Rewards configuration
+rewards:
+  # Enable or disable the reward system (Global options).
+  # Default: true
+  enabled: true
+
+  # Command executed by the console.
+  console-cmd:
+    enabled: true
+    commands:
+      - "give %player% diamond 1"
+      - "lp user %player% parent add NameMC"
+      - "say %player% has voted!"
+
+  # Command executed by the player.
+  player-cmd:
+    enabled: false
+    commands:
+      - "/say %player% has voted!"
+
+  # Player send message in chat.
+  player-msg:
+    enabled: false
+    messages:
+      - "You have voted!"
+      - "You have received a reward!"
+

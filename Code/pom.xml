@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.happyuky7</groupId>
+    <artifactId>NameMCAPI</artifactId>
+    <version>2.0.0-DEV-110</version>
+    <packaging>pom</packaging>
+
+    <!-- Only build the modules that are needed -->
+    <!-- Active modules ignore ProfileSettings -->
+    <!--modules>
+        <module>NameMCAPI-Common</module>
+        <module>NameMCAPI-Spigot</module>
+        <module>NameMCAPI-Bungee</module>
+    </modules-->
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.happyuky7</groupId>
+                <artifactId>NameMCAPI-Common</artifactId>
+                <version>2.0.0-DEV-110</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <profiles>
+
+        <!-- Profile to build only Common -->
+        <profile>
+            <id>common-only</id>
+            <modules>
+                <module>NameMCAPI-Common</module>
+            </modules>
+        </profile>
+
+        <!-- Profile to build only Spigot and Common -->
+        <profile>
+            <id>spigot-only</id>
+            <modules>
+                <module>NameMCAPI-Common</module>
+                <module>NameMCAPI-Spigot</module>
+            </modules>
+        </profile>
+
+        <!-- Profile to build only Bungee and Common -->
+        <profile>
+            <id>bungee-only</id>
+            <modules>
+                <module>NameMCAPI-Common</module>
+                <module>NameMCAPI-Bungee</module>
+            </modules>
+        </profile>
+
+        <!-- Profile to build everything -->
+        <profile>
+            <id>full-build</id>
+            <modules>
+                <module>NameMCAPI-Common</module>
+                <module>NameMCAPI-Spigot</module>
+                <module>NameMCAPI-Bungee</module>
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-DEV-109
+config-version: 2.0.0-Bungee-DEV-110
 
 data:
 
@@ -70,16 +70,4 @@ rewards:
       - "lp user %player% parent add NameMC"
       - "say %player% has voted!"
 
-  # Command executed by the player.
-  player-cmd:
-    enabled: false
-    commands:
-      - "/say %player% has voted!"
-
-  # Player send message in chat.
-  player-msg:
-    enabled: false
-    messages:
-      - "You have voted!"
-      - "You have received a reward!"
 
