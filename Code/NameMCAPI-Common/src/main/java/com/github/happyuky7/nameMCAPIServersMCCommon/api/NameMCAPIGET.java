@@ -22,6 +22,12 @@ public class NameMCAPIGET {
     // Get the vote of a player
     public static boolean getVote(String uuid, String serverIP) {
         try {
+
+            if (uuid == null || serverIP == null) {
+                throw new IllegalArgumentException("UUID or Server IP cannot be null.");
+                //return false;
+            }
+
             String url = getURLVote()
                     .replaceAll("<server-ip>", serverIP)
                     .replaceAll("<uuid>", uuid);

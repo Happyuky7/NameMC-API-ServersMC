@@ -70,6 +70,10 @@ public class NameMCAPI {
      */
     public boolean getVote(String uuid, String serverip) {
         try {
+            if (uuid == null || serverip == null) {
+                throw new IllegalArgumentException("UUID or Server IP cannot be null.");
+                //return false;
+            }
             return NameMCAPIGET.getVote(uuid, serverip);
         } catch (Exception e) {
             e.printStackTrace();

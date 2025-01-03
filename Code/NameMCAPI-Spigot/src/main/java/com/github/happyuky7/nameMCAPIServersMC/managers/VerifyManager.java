@@ -25,7 +25,12 @@ public class VerifyManager {
             return true;
         }
 
-        System.out.println("NameMCAPIGET.getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
+        if (uuid == null || ip == null) {
+            throw new IllegalArgumentException("UUID or Server IP cannot be null.");
+            //return false;
+        }
+
+        System.out.println("NameMCAPI.getInstance().getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
         if (NameMCAPI.getInstance().getVote(uuid, ip)) {
             YamlDataManager.setVote(username, uuid, true);
             System.out.println("Voted");
