@@ -32,7 +32,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         config = new FileManager(this, "config");
 
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-DEV-111")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-112")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
