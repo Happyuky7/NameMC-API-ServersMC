@@ -18,10 +18,10 @@ public class MessagesManager {
 
         return MessageColors.getMsgColor(
                 message
-                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
-                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                        .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                        .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replace("&vote_link&", "https://namemc.com/server/" +
                                 NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
         );
     }
@@ -36,14 +36,13 @@ public class MessagesManager {
 
         return MessageColors.getMsgColor(
                 message
-                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                        .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                         .replace("%player%", player.getName())
                         .replace("%uuid%", player.getUniqueId().toString())
-                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                        .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replace("&vote_link&", "https://namemc.com/server/" +
                                 NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
-
         );
     }
 
@@ -55,21 +54,20 @@ public class MessagesManager {
             return logErrorPath(path);
         }
 
-        for (String message : messages) {
-            message = MessageColors.getMsgColor(message);
-            try {
-                message
-                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
-                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
-                                NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+        // Corregir aquí el reemplazo para cada mensaje
+        for (int i = 0; i < messages.size(); i++) {
+            String message = messages.get(i);
+            messages.set(i, MessageColors.getMsgColor(
+                    message
+                            .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                            .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("&vote_link&", "https://namemc.com/server/" +
+                                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+            ));
         }
 
-        return String.join("\n", (Iterable) messages);
+        return String.join("\n", messages);
     }
 
     // Get the message list from the language file with the player
@@ -80,20 +78,22 @@ public class MessagesManager {
             return logErrorPath(path);
         }
 
-        for (String message : messages) {
-            message = MessageColors.getMsgColor(
+        // Corregir aquí el reemplazo para cada mensaje
+        for (int i = 0; i < messages.size(); i++) {
+            String message = messages.get(i);
+            messages.set(i, MessageColors.getMsgColor(
                     message
-                            .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                            .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
                             .replace("%uuid%", player.getUniqueId().toString())
-                            .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                            .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                            .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                            .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("&vote_link&", "https://namemc.com/server/" +
                                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
-            );
+            ));
         }
 
-        return String.join("\n", (Iterable) messages);
+        return String.join("\n", messages);
     }
 
     // Get the message from the language file

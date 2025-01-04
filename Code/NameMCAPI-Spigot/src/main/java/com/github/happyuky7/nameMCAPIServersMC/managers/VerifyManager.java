@@ -22,6 +22,16 @@ public class VerifyManager {
         }
     }
 
+    public static boolean hasVoted(UUID uuid, String type) {
+        if (type.equalsIgnoreCase("YAML")) {
+            return YamlDataManager.hasVoted(uuid.toString());
+        } else if (type.equalsIgnoreCase("MongoDB")) {
+            return false;
+        } else {
+            return false;
+        }
+    }
+
     // Verify the vote using YAML
     public static boolean YamlVerifyVote(String username, String uuid, String ip) {
         System.out.println("YAML Verify");

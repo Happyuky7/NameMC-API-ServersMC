@@ -72,7 +72,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-114"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-115"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -87,7 +87,8 @@ public class NameMCAPICMD implements CommandExecutor {
         if (args[0].equalsIgnoreCase("verify")) {
 
             if (!NameMCAPI.COOLDOWN_API.checkCooldown(player.getUniqueId())) {
-                player.sendMessage(MessagesManager.getMessageList("commands.verify.cooldown", player));
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.cooldown", player)
+                        .replaceAll("%time%", String.valueOf(NameMCAPI.COOLDOWN_API.getCooldown(player.getUniqueId()))));
                 return true;
             }
 
@@ -126,11 +127,18 @@ public class NameMCAPICMD implements CommandExecutor {
                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")));*/
 
 
+            if (VerifyManager.hasVoted(player.getUniqueId(), NameMCAPIServersMC.typeData)) {
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.vote.already-voted", player));
+                return true;
+            }
+
             if (VerifyManager.verifyVote(
                     NameMCAPIServersMC.typeData,
                     player.getName(),
                     uuid,
                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))) {
+
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.vote.success", player));
 
 
                 if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("rewards.enabled")) {

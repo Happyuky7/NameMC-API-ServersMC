@@ -3,7 +3,7 @@
 # Original Author: https://github.com/Happyuky7/
 # Contributors:
 # - https://github.com/Happyuky7/
-# Lasted Update Version (Plugin): 2.0.0-DEV-114
+# Lasted Update Version (Plugin): 2.0.0-DEV-115
 
 # Lang ID | NOTE: Do not change this value.
 lang-id: en_US # Example: en_US, es_ES, pt_BR, etc.
@@ -54,23 +54,29 @@ commands:
         - " "
         - " &7- &aYou have successfully claimed your rewards for this vote."
         - " "
-      vote:
-        notvoted:
-          - " "
-          - "&9 NameMCAPI &7- &fVerify"
-          - " "
-          - " &7- &cYou have not voted for the server yet."
-          - " &7- &aVote for the server using the command &f/namemc vote."
-          - " "
-        voted:
-          - " "
-          - "&9 NameMCAPI &7- &fVerify"
-          - " "
-          - " &7- &aYou have already voted for the server."
-          - " "
-    reload:
-      - " "
-      - "&9 NameMCAPI &7- &fReload"
-      - " "
-      - " &7- &aThe plugin has been reloaded."
-      - " "
+    vote:
+      notvoted:
+        - " "
+        - "&9 NameMCAPI &7- &fVerify"
+        - " "
+        - " &7- &cYou have not voted for the server yet."
+        - " &7- &aVote for the server using the command &f/namemc vote."
+        - " "
+      already-voted:
+        - " "
+        - "&9 NameMCAPI &7- &fVerify"
+        - " "
+        - " &7- &aYou have already voted for the server."
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &fVerify"
+        - " "
+        - " &7- &aYou have successfully voted for the server."
+        - " "
+  reload:
+    - " "
+    - "&9 NameMCAPI &7- &fReload"
+    - " "
+    - " &7- &aThe plugin has been reloaded."
+    - " "
