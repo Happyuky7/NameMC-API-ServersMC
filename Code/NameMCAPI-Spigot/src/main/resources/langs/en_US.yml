@@ -3,7 +3,7 @@
 # Original Author: https://github.com/Happyuky7/
 # Contributors:
 # - https://github.com/Happyuky7/
-# Lasted Update Version (Plugin): 2.0.0-DEV-108
+# Lasted Update Version (Plugin): 2.0.0-DEV-114
 
 # Lang ID | NOTE: Do not change this value.
 lang-id: en_US # Example: en_US, es_ES, pt_BR, etc.
@@ -12,8 +12,65 @@ lang-id: en_US # Example: en_US, es_ES, pt_BR, etc.
 prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
 no-permission: "%prefix% &cYou do not have permission to use this command."
 
-default-msg:
-  - " "
-  - "&9NameMC-API-ServersMC &8- &aVersion: &f%version%"
-  - "&aPlugin by &f%author%"
-  - " "
+commands:
+  default:
+    - " "
+    - "&9 NameMCAPI &7- &aVersion: &f%version% &7- &aAuthor: &f%author%"
+    - " "
+    - " &7- &a/namemc help &7- &fShow all commands."
+    - " &7- &aUsing the command &f/namemc vote &7- &fto vote for the server."
+    - "  "
+  vote:
+    - " "
+    - "&9 NameMCAPI &7- &fVote"
+    - " "
+    - " &7- &aClick the link below to vote for the server!"
+    - " &7- &f%vote_link%"
+    - " "
+  verify:
+    cooldown:
+      - " "
+      - "&9 NameMCAPI &7- &fVerify"
+      - " "
+      - " &7- &aYou must wait &f%time% &aseconds before using this command again."
+      - " "
+    error-onlinemode:
+      - " "
+      - "&9 NameMCAPI &7- &fVerify"
+      - " "
+      - " &7- &fAn error occurred while verifying your vote!"
+      - " &7- &fIt is not necessarily a bug, most likely the player who executed the command is a non-premium (offline) player."
+      - " "
+    rewards:
+      already-claimed:
+        - " "
+        - "&9 NameMCAPI &7- &fVerify"
+        - " "
+        - " &7- &fYou have already claimed your rewards for this vote."
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &fVerify"
+        - " "
+        - " &7- &aYou have successfully claimed your rewards for this vote."
+        - " "
+      vote:
+        notvoted:
+          - " "
+          - "&9 NameMCAPI &7- &fVerify"
+          - " "
+          - " &7- &cYou have not voted for the server yet."
+          - " &7- &aVote for the server using the command &f/namemc vote."
+          - " "
+        voted:
+          - " "
+          - "&9 NameMCAPI &7- &fVerify"
+          - " "
+          - " &7- &aYou have already voted for the server."
+          - " "
+    reload:
+      - " "
+      - "&9 NameMCAPI &7- &fReload"
+      - " "
+      - " &7- &aThe plugin has been reloaded."
+      - " "

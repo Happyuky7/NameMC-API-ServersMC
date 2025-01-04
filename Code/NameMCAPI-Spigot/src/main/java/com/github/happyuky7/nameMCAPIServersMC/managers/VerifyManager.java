@@ -3,7 +3,12 @@ package com.github.happyuky7.nameMCAPIServersMC.managers;
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
 import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 public class VerifyManager {
+
+    public static HashMap<UUID, Boolean> voted = new HashMap<>();
 
     // Verify the vote
     public static boolean verifyVote(String type, String username, String uuid, String ip) {
@@ -22,6 +27,7 @@ public class VerifyManager {
         System.out.println("YAML Verify");
         if (YamlDataManager.hasVoted(uuid)) {
             System.out.println("Already Voted");
+            voted.put(UUID.fromString(uuid), true);
             return true;
         }
 
@@ -30,10 +36,11 @@ public class VerifyManager {
             //return false;
         }
 
-        System.out.println("NameMCAPI.getInstance().getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
+        //System.out.println("NameMCAPI.getInstance().getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
         if (NameMCAPI.getInstance().getVote(uuid, ip)) {
             YamlDataManager.setVote(username, uuid, true);
             System.out.println("Voted");
+            voted.put(UUID.fromString(uuid), true);
             return true;
         }
 

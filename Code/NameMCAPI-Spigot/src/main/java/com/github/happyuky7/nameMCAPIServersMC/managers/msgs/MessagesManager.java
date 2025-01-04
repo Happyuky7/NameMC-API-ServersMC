@@ -16,7 +16,14 @@ public class MessagesManager {
             return logErrorPath(path);
         }
 
-        return MessageColors.getMsgColor(message);
+        return MessageColors.getMsgColor(
+                message
+                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                                NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+        );
     }
 
     // Get the message from the language file with the player
@@ -29,8 +36,14 @@ public class MessagesManager {
 
         return MessageColors.getMsgColor(
                 message
+                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                         .replace("%player%", player.getName())
                         .replace("%uuid%", player.getUniqueId().toString())
+                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                                NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+
         );
     }
 
@@ -44,6 +57,16 @@ public class MessagesManager {
 
         for (String message : messages) {
             message = MessageColors.getMsgColor(message);
+            try {
+                message
+                        .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
+                        .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                                NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return String.join("\n", (Iterable) messages);
@@ -60,8 +83,13 @@ public class MessagesManager {
         for (String message : messages) {
             message = MessageColors.getMsgColor(
                     message
+                            .replaceAll("%preix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
                             .replace("%uuid%", player.getUniqueId().toString())
+                            .replaceAll("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replaceAll("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replaceAll("&vote_link&", "https://namemc.com/server/" +
+                                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
             );
         }
 

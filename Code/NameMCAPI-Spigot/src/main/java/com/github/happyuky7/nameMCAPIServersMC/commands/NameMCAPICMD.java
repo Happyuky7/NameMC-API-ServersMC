@@ -3,6 +3,7 @@ package com.github.happyuky7.nameMCAPIServersMC.commands;
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
 import com.github.happyuky7.nameMCAPIServersMC.managers.RewardsManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.VerifyManager;
+import com.github.happyuky7.nameMCAPIServersMC.managers.msgs.MessagesManager;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
 import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.CooldownManager;
@@ -26,17 +27,7 @@ public class NameMCAPICMD implements CommandExecutor {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fHelp"));
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc &7- &fVote for the server!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc help &7- &fHelp command!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc admin &7- &fAdmin command!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc info &7- &fPlugin information!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc vote &7- &fVote for the server!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc verify &7- &fVerify your vote!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc reload &7- &fReload the plugin!"));
-            player.sendMessage(MessageColors.getMsgColor(" "));
+            player.sendMessage(MessagesManager.getMessageList("commands.default", player));
             return true;
         }
 
@@ -58,7 +49,7 @@ public class NameMCAPICMD implements CommandExecutor {
         if (args[0].equalsIgnoreCase("admin")) {
 
             if (!player.hasPermission("namemc.admin")) {
-                player.sendMessage(MessageColors.getMsgColor("&cYou do not have permission to execute this command!"));
+                player.sendMessage(MessagesManager.getMessage("no-permission", player));
                 return true;
             }
 
@@ -81,7 +72,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-113"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-114"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -89,25 +80,14 @@ public class NameMCAPICMD implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("vote")) {
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVote"));
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &fClick the link below to vote for the server!"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &fhttps://namemc.com/server/" +
-                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")
-            ));
-            player.sendMessage(MessageColors.getMsgColor(" "));
+            player.sendMessage(MessagesManager.getMessageList("commands.vote", player));
             return true;
         }
 
         if (args[0].equalsIgnoreCase("verify")) {
 
             if (!NameMCAPI.COOLDOWN_API.checkCooldown(player.getUniqueId())) {
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fYou must wait " + CooldownManager.getFormattedCooldown(CooldownManager.getCooldown(player.getUniqueId())) + " before verifying your vote!"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.cooldown", player));
                 return true;
             }
 
@@ -130,13 +110,7 @@ public class NameMCAPICMD implements CommandExecutor {
             }
 
             if (uuid == null) {
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fAn error occurred while verifying your vote!"));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fIt is not necessarily a bug, most likely the player who executed the command is a non-premium (offline) player."));
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor("&cError ID: 002"));
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.error-onlinemode", player));
                 return true;
             }
 
@@ -144,12 +118,12 @@ public class NameMCAPICMD implements CommandExecutor {
                 CooldownManager.setCooldown(player.getUniqueId(), NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
             }
 
-            System.out.println("Verify");
+            /*System.out.println("Verify");
             System.out.println(VerifyManager.verifyVote(
                     NameMCAPIServersMC.typeData,
                     player.getName(),
                     uuid,
-                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")));
+                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")));*/
 
 
             if (VerifyManager.verifyVote(
@@ -172,28 +146,16 @@ public class NameMCAPICMD implements CommandExecutor {
                                 true
                         );
 
-                        player.sendMessage(MessageColors.getMsgColor(" "));
-                        player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
-                        player.sendMessage(MessageColors.getMsgColor(" "));
-                        player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have successfully verified your vote!"));
-                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessagesManager.getMessageList("commands.verify.rewards.success", player));
 
                     } else {
-                        player.sendMessage(MessageColors.getMsgColor(" "));
-                        player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
-                        player.sendMessage(MessageColors.getMsgColor(" "));
-                        player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have already claimed your reward!"));
-                        player.sendMessage(MessageColors.getMsgColor(" "));
+                        player.sendMessage(MessagesManager.getMessageList("commands.verify.rewards.already-claimed", player));
                     }
 
                 }
 
             } else {
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &7- &fYou have not voted yet!"));
-                player.sendMessage(MessageColors.getMsgColor(" "));
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.vote.notvoted", player));
             }
 
             return true;
@@ -202,15 +164,11 @@ public class NameMCAPICMD implements CommandExecutor {
         if (args[0].equalsIgnoreCase("reload")) {
 
             if (!player.hasPermission("namemc.reload")) {
-                player.sendMessage(MessageColors.getMsgColor("&cYou do not have permission to execute this command!"));
+                player.sendMessage(MessagesManager.getMessage("no-permission", player));
             }
 
             NameMCAPIServersMC.getInstance().getConfig().reload();
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fReload"));
-            player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &fThe plugin has been reloaded!"));
-            player.sendMessage(MessageColors.getMsgColor(" "));
+            player.sendMessage(MessagesManager.getMessageList("commands.reload", player));
             return true;
         }
 
