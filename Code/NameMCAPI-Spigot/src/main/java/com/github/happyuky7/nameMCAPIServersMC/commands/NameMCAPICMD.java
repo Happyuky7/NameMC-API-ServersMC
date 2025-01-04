@@ -81,7 +81,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-112"));
+            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-113"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -104,7 +104,7 @@ public class NameMCAPICMD implements CommandExecutor {
 
             if (!NameMCAPI.COOLDOWN_API.checkCooldown(player.getUniqueId())) {
                 player.sendMessage(MessageColors.getMsgColor(" "));
-                player.sendMessage(MessageColors.getMsgColor(" &9&ameMCAPIServersMC &7- &fVerify"));
+                player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
                 player.sendMessage(MessageColors.getMsgColor(" "));
                 player.sendMessage(MessageColors.getMsgColor(" &7- &fYou must wait " + CooldownManager.getFormattedCooldown(CooldownManager.getCooldown(player.getUniqueId())) + " before verifying your vote!"));
                 player.sendMessage(MessageColors.getMsgColor(" "));
@@ -127,6 +127,17 @@ public class NameMCAPICMD implements CommandExecutor {
                     player.sendMessage(MessageColors.getMsgColor("&cError ID: 002"));
                     return true;
                 }
+            }
+
+            if (uuid == null) {
+                player.sendMessage(MessageColors.getMsgColor(" "));
+                player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
+                player.sendMessage(MessageColors.getMsgColor(" "));
+                player.sendMessage(MessageColors.getMsgColor(" &7- &fAn error occurred while verifying your vote!"));
+                player.sendMessage(MessageColors.getMsgColor(" &7- &fIt is not necessarily a bug, most likely the player who executed the command is a non-premium (offline) player."));
+                player.sendMessage(MessageColors.getMsgColor(" "));
+                player.sendMessage(MessageColors.getMsgColor("&cError ID: 002"));
+                return true;
             }
 
             if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.cooldown.enabled")) {

@@ -1,8 +1,6 @@
 package com.github.happyuky7.nameMCAPIServersMC;
 
 import com.github.happyuky7.nameMCAPIServersMC.files.FileManager;
-import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.data.MongoDBManager;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public final class NameMCAPIServersMC extends Plugin {
