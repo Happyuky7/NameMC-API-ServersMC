@@ -19,9 +19,9 @@ public class MessagesManager {
         return MessageColors.getMsgColor(
                 message
                         .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
-                        .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                        .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                        .replace("&vote_link&", "https://namemc.com/server/" +
+                        .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replace("%vote_link%", "https://namemc.com/server/" +
                                 NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
         );
     }
@@ -39,9 +39,9 @@ public class MessagesManager {
                         .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                         .replace("%player%", player.getName())
                         .replace("%uuid%", player.getUniqueId().toString())
-                        .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                        .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                        .replace("&vote_link&", "https://namemc.com/server/" +
+                        .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                        .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                        .replace("%vote_link%", "https://namemc.com/server/" +
                                 NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
         );
     }
@@ -60,9 +60,9 @@ public class MessagesManager {
             messages.set(i, MessageColors.getMsgColor(
                     message
                             .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
-                            .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                            .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                            .replace("&vote_link&", "https://namemc.com/server/" +
+                            .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("%vote_link%", "https://namemc.com/server/" +
                                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
             ));
         }
@@ -86,15 +86,16 @@ public class MessagesManager {
                             .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
                             .replace("%uuid%", player.getUniqueId().toString())
-                            .replace("&version&", NameMCAPIServersMC.getInstance().getDescription().getVersion())
-                            .replace("&author&", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
-                            .replace("&vote_link&", "https://namemc.com/server/" +
+                            .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("%vote_link%", "https://namemc.com/server/" +
                                     NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
             ));
         }
 
         return String.join("\n", messages);
     }
+
 
     // Get the message from the language file
     public static String logErrorPath(String path) {

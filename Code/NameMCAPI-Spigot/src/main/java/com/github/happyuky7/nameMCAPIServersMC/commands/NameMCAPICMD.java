@@ -33,7 +33,11 @@ public class NameMCAPICMD implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("help")) {
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fHelp"));
+            player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fHelp"));
+            player.sendMessage(MessageColors.getMsgColor(" "));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-116"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc &7- &fVote for the server!"));
             player.sendMessage(MessageColors.getMsgColor(" &7- &f/namemc help &7- &fHelp command!"));
@@ -70,11 +74,11 @@ public class NameMCAPICMD implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("info")) {
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fInformation"));
+            player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aVersion:&f 2.0.0-DEV-115"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aAuthor:&f Happyuky7"));
-            player.sendMessage(MessageColors.getMsgColor(" &7- &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-116"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
             return true;
         }
