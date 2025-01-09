@@ -102,7 +102,7 @@ public class NameMCAPICMD implements CommandExecutor {
                 uuid = player.getUniqueId().toString();
             } else {
                 try {
-                    uuid = MojangAPIManager.getUUID(player.getName());
+                    uuid = MojangAPIManager.getUUID(player.getName(), false);
                 } catch (Exception e) {
                     player.sendMessage(MessageColors.getMsgColor(" "));
                     player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));

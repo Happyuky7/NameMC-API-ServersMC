@@ -38,4 +38,28 @@ public final class MojangAPIManager {
             return null;
         }
     }
+
+    /**
+     * Retrieves the Mojang UUID for a Minecraft player based on their username.
+     * This method sends a request to the Mojang API and parses the response to get
+     * the UUID of the player.
+     *
+     * @param name the Minecraft username for which to retrieve the UUID.
+     * @return the UUID of the player as a String, or null if there is an error.
+     */
+    public static String getUUID(String name, boolean error) {
+        try {
+
+            URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            JsonObject object = (new JsonParser()).parse(reader).getAsJsonObject();
+            return object.get("id").getAsString();
+
+        } catch (Exception e) {
+            if (error) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
 }

@@ -6,7 +6,7 @@ Use of the NameMC API for Minecraft Servers.
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
 ### [Download 1.8 - 1.21.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
 
-### [DEV] [NEW VERSION 2.0.0 (DEV-115) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-115)
+### [DEV] [NEW VERSION 2.0.0 (DEV-117) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-117)
 
 ---
 

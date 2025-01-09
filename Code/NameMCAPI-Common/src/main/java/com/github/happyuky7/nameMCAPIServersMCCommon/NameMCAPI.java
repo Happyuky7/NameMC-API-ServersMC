@@ -95,6 +95,19 @@ public class NameMCAPI {
     }
 
     /**
+     * Retrieves the Mojang UUID for a given Minecraft player name.
+     *
+     * @param name the name of the Minecraft player.
+     */
+    public void getMojangUUID(String name, boolean error) {
+        try {
+            MojangAPIManager.getUUID(name, error);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * The DateAPI class provides methods for retrieving various date-related information.
      * The date methods are based on the current system date and time.
      */
