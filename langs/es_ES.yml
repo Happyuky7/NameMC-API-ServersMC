@@ -1,0 +1,82 @@
+# NameMC-API-ServersMC
+# Lang Translation: staFF6773 (notstaff)
+# Original Author Translation: https://github.com/Happyuky7/
+# Contributors:
+# - https://github.com/Happyuky7/
+# Lasted Update Version (Plugin): 2.0.0-DEV-117
+
+# Lang ID | NOTE: Do not change this value.
+lang-id: es_ES # Example: en_US, es_ES, pt_BR, etc.
+
+# Basic
+prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
+no-permission: "%prefix% &cNo tiene permiso para utilizar este comando."
+
+commands:
+  default:
+    - " "
+    - "&9 NameMCAPI &7- &aVersion: &f%version% &7- &aAuthor: &f%author%"
+    - " "
+    - " &7- &a/namemc help &7- &fMostrar todos los comandos."
+    - " &7- &aUsando el comando &f/namemc vote &7- &fpara votar por el servidor."
+    - "  "
+  vote:
+    - " "
+    - "&9 NameMCAPI &7- &fVotar"
+    - " "
+    - " &7- &aHaga clic en el siguiente enlace para votar por el servidor."
+    - " &7- &f%vote_link%"
+    - " "
+  verify:
+    cooldown:
+      - " "
+      - "&9 NameMCAPI &7- &fVerificar"
+      - " "
+      - " &7- &aDebe esperar &f%time% &antes de volver a utilizar este comando."
+      - " "
+    error-onlinemode:
+      - " "
+      - "&9 NameMCAPI &7- &fVerificar"
+      - " "
+      - " &7- &fSe ha producido un error al verificar tu voto."
+      - " &7- &fNo es necesariamente un bug, lo más probable es que el jugador que ejecutó el comando sea un jugador no premium."
+      - " "
+    rewards:
+      already-claimed:
+        - " "
+        - "&9 NameMCAPI &7- &fVerificar"
+        - " "
+        - " &7- &fYa has reclamado tus recompensas por esta votación."
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &fVerificar"
+        - " "
+        - " &7- &aHas reclamado con éxito tus recompensas por esta votación."
+        - " "
+    vote:
+      notvoted:
+        - " "
+        - "&9 NameMCAPI &7- &fVerificar"
+        - " "
+        - " &7- &cYou have not voted for the server yet."
+        - " &7- &aVote for the server using the command &f/namemc vote."
+        - " "
+      already-voted:
+        - " "
+        - "&9 NameMCAPI &7- &fVerificar"
+        - " "
+        - " &7- &aYa ha votado por el servidor."
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &fVerificar"
+        - " "
+        - " &7- &aHa votado correctamente por el servidor."
+        - " "
+  reload:
+    - " "
+    - "&9 NameMCAPI &7- &fRecarga"
+    - " "
+    - " &7- &aEl plugin ha sido recargado."
+    - " "
