@@ -1,13 +1,13 @@
-# NameMC-API-ServersMC
-# Lang Translation: Spanish
-# Original Author Translation: https://github.com/Happyuky7/
+# NombreMC-API-ServidoresMC
+# Traducion del Lenguaje: Español
+# Autor Original de la Traduccion: https://github.com/Happyuky7/
 # Contributors:
 # - https://github.com/Happyuky7/
 # - https://github.com/staFF6773
-# Lasted Update Version (Plugin): 2.0.0-DEV-117
+# La Ultima Actualizacion (Plugin): 2.0.0-DEV-117
 
-# Lang ID | NOTE: Do not change this value.
-lang-id: es_ES # Example: en_US, es_ES, pt_BR, etc.
+# Lang ID | NOTA: No cambie este valor.
+lang-id: es_ES # Ejemplo: en_US, es_ES, pt_BR, etc.
 
 # Basic
 prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
@@ -60,8 +60,8 @@ commands:
         - " "
         - "&9 NameMCAPI &7- &fVerificar"
         - " "
-        - " &7- &cYou have not voted for the server yet."
-        - " &7- &aVote for the server using the command &f/namemc vote."
+        - " &7- &cAún no ha votado por el servidor."
+        - " &7- &aVota por el servidor usando el comando &f/namemc vote».."
         - " "
       already-voted:
         - " "
