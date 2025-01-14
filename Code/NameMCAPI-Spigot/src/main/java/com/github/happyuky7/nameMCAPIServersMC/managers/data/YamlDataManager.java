@@ -64,6 +64,7 @@ public class YamlDataManager {
 
     public static void setClaimReward(UUID uuid, Boolean claimReward) {
         NameMCAPIServersMC.getInstance().getData().set("players." + uuid + ".claim-reward", claimReward);
+        NameMCAPIServersMC.getInstance().getData().save();
     }
 
 }

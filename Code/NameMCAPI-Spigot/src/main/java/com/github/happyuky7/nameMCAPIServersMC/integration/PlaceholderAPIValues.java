@@ -70,7 +70,11 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("voted_boolean")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                return YamlDataManager.hasVoted(player.getUniqueId()) ? "true" : "false";
+                if (YamlDataManager.hasVoted(player.getUniqueId())) {
+                    return "true";
+                } else {
+                    return "false";
+                }
             } else if (NameMCAPIServersMC.typeData.equalsIgnoreCase("mongodb")) {
                 return "false";
                 //return String.valueOf(VerifyManager.MongoDBVerifyVote(player.getName(), player.getUniqueId(), plugin.getConfig().getString("settings.ip-server")));
@@ -79,7 +83,11 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("voted")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                return YamlDataManager.hasVoted(player.getUniqueId()) ? MessagesManager.getMessage("integrations.placeholderapi.voted-true") : MessagesManager.getMessage("integrations.placeholderapi.voted-false");
+                if (YamlDataManager.hasVoted(player.getUniqueId())) {
+                    return MessagesManager.getMessage("integrations.placeholderapi.voted-true");
+                } else {
+                    return MessagesManager.getMessage("integrations.placeholderapi.voted-false");
+                }
             } else if (NameMCAPIServersMC.typeData.equalsIgnoreCase("mongodb")) {
                 return "MongoDB VOTED VALUE, is not implemented in this version (BETA)";
                 //return String.valueOf(VerifyManager.MongoDBVerifyVote(player.getName(), player.getUniqueId(), plugin.getConfig().getString("settings.ip-server")));
@@ -88,7 +96,11 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("reward_boolean")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                return YamlDataManager.hasClaimedReward(player.getUniqueId()) ? "true" : "false";
+                if (YamlDataManager.hasClaimedReward(player.getUniqueId())) {
+                    return "true";
+                } else {
+                    return "false";
+                }
             } else if (NameMCAPIServersMC.typeData.equalsIgnoreCase("mongodb")) {
                 return "false";
             }
@@ -96,7 +108,11 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("reward")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                return YamlDataManager.hasClaimedReward(player.getUniqueId()) ? MessagesManager.getMessage("integrations.placeholderapi.reward-true") : MessagesManager.getMessage("integrations.placeholderapi.reward-false");
+                if (YamlDataManager.hasClaimedReward(player.getUniqueId())) {
+                    return MessagesManager.getMessage("integrations.placeholderapi.reward-true");
+                } else {
+                    return MessagesManager.getMessage("integrations.placeholderapi.reward-false");
+                }
             } else if (NameMCAPIServersMC.typeData.equalsIgnoreCase("mongodb")) {
                 return "MongoDB REWARD VALUE, is not implemented in this version (BETA)";
             }
