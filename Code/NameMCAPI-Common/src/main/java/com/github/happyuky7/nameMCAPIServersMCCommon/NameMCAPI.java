@@ -1,9 +1,6 @@
 package com.github.happyuky7.nameMCAPIServersMCCommon;
 
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.CooldownManager;
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.NameMCAPIGET;
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.MojangAPIManager;
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.DateInfo;
+import com.github.happyuky7.nameMCAPIServersMCCommon.api.*;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -45,6 +42,13 @@ public class NameMCAPI {
     }
 
     /**
+     * The UUIDFormater instance which provides methods to format UUIDs.
+     *
+     * @return the UUIDFormater instance.
+     */
+    public static final UUIDFormater UUID_FORMATER = new NameMCAPI().new UUIDFormater();
+
+    /**
      * Returns a new instance of the DateAPI class, which provides methods to get date information.
      *
      * @return a new DateAPI instance.
@@ -68,7 +72,7 @@ public class NameMCAPI {
      * @param uuid the UUID of the player.
      * @param serverip the IP address of the server.
      */
-    public boolean getVote(String uuid, String serverip) {
+    public boolean getVote(UUID uuid, String serverip) {
         try {
             if (uuid == null || serverip == null) {
                 throw new IllegalArgumentException("UUID or Server IP cannot be null.");
@@ -86,26 +90,58 @@ public class NameMCAPI {
      *
      * @param name the name of the Minecraft player.
      */
-    public void getMojangUUID(String name) {
+    public String getMojangUUID(String name) {
         try {
-            MojangAPIManager.getUUID(name);
+            return MojangAPIManager.getUUID(name);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
      * Retrieves the Mojang UUID for a given Minecraft player name.
      *
      * @param name the name of the Minecraft player.
+     * @return
      */
-    public void getMojangUUID(String name, boolean error) {
+    public UUID getMojangUUID(String name, boolean error) {
         try {
-            MojangAPIManager.getUUID(name, error);
+            return UUIDFormated.fromStringWithHyphens(MojangAPIManager.getUUID(name, error));
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            return null;
         }
     }
+
+
+    /**
+     * The UUIDFormater class provides methods to format UUIDs.
+     */
+    public class UUIDFormater {
+
+        public UUID fromStringWithHyphens(String uuid) {
+            return UUIDFormated.fromStringWithHyphens(uuid);
+        }
+
+        public UUID fromStringWithoutHyphens(String uuid) {
+            return UUIDFormated.fromStringWithoutHyphens(uuid);
+        }
+
+        public String toStringWithHyphens(UUID uuid) {
+            return UUIDFormated.toStringWithHyphens(uuid);
+        }
+
+        public String toStringWithoutHyphens(UUID uuid) {
+            return UUIDFormated.toStringWithoutHyphens(uuid);
+        }
+
+        public boolean isValidUUID(String uuid) {
+            return UUIDFormated.isValidUUID(uuid);
+        }
+
+    }
+
 
     /**
      * The DateAPI class provides methods for retrieving various date-related information.

@@ -1,9 +1,9 @@
 
-config-version: 2.0.0-Spigot-DEV-117
+config-version: 2.0.0-Spigot-DEV-118
 
 data:
 
-  # Types: YAML, MongoDB (MongoDB is not supported in this version)
+  # Types: YAML, MongoDB (MongoDB is BETA support)
   type: "yaml"
 
   # YAML configuration
@@ -11,10 +11,12 @@ data:
   yaml:
     file: "data" # Do not change this value.
 
+  # Warning: MongoDB is in BETA support.
+  # Warning: It is NOT 100% proven to work correctly, function is BETA.
   # MongoDB configuration (MongoDB is not supported in this version)
   mongodb:
     uri: "mongodb://localhost:27017"
-    database: "test"
+    database: "NameMCAPI"
     collection: "data"
 
 
@@ -56,11 +58,33 @@ settings:
     # Default: 300 (5 minutes)
     time: 300
 
+# Integrations configuration
+integrations:
+  # PlaceholderAPI integration.
+  # PlaceholderAPI is a plugin that allows you to use placeholders from other plugins.
+  # https://www.spigotmc.org/resources/placeholderapi.6245/
+  # -----------------------------------------------------
+  # REQUIRED PlaceholderAPI plugin installed.
+  # Enable or disable PlaceholderAPI integration. (Recommended enabled | Required PlaceholderAPI plugin)
+  # -----------------------------------------------------
+  # Default: true
+  placeholderapi: true
+
 # Rewards configuration
+# Placeholders API no supported (Rewards) in this version, support in next version. (In Development)
 rewards:
   # Enable or disable the reward system (Global options).
   # Default: true
   enabled: true
+
+  # Values variables:
+  # - %player% = Player name.
+  # - %uuid% = Player UUID.
+  # - %ip% = Server IP.
+  # - %vote_link% = Vote link.
+  # - %prefix% = Prefix of the plugin.
+  # - %version% = Plugin version.
+  # - %author% = Plugin author.
 
   # Command executed by the console.
   console-cmd:

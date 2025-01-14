@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.UUID;
 
 public class NameMCAPIGET {
 
@@ -20,7 +21,7 @@ public class NameMCAPIGET {
     }
 
     // Get the vote of a player
-    public static boolean getVote(String uuid, String serverIP) {
+    public static boolean getVote(UUID uuid, String serverIP) {
         try {
 
             if (uuid == null || serverIP == null) {
@@ -30,7 +31,7 @@ public class NameMCAPIGET {
 
             String url = getURLVote()
                     .replaceAll("<server-ip>", serverIP)
-                    .replaceAll("<uuid>", uuid);
+                    .replaceAll("<uuid>", String.valueOf(uuid));
             HttpURLConnection connection = (HttpURLConnection) (new URL(url)).openConnection();
             connection.setRequestMethod("GET");
             int responseCode = connection.getResponseCode();

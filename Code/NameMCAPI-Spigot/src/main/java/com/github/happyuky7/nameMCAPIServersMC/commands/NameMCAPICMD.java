@@ -11,10 +11,15 @@ import com.github.happyuky7.nameMCAPIServersMCCommon.api.MojangAPIManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class NameMCAPICMD implements CommandExecutor {
+import java.util.List;
+import java.util.UUID;
+
+public class NameMCAPICMD implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -35,7 +40,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fHelp"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-116"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-118"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -76,7 +81,7 @@ public class NameMCAPICMD implements CommandExecutor {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-116"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-118"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -96,13 +101,12 @@ public class NameMCAPICMD implements CommandExecutor {
                 return true;
             }
 
-
-            String uuid;
+            UUID uuid;
             if (NameMCAPIServersMC.getInstance().getConfig().getString("settings.online-mode").equalsIgnoreCase("true")) {
-                uuid = player.getUniqueId().toString();
+                uuid = player.getUniqueId();
             } else {
                 try {
-                    uuid = MojangAPIManager.getUUID(player.getName(), false);
+                    uuid = NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
                 } catch (Exception e) {
                     player.sendMessage(MessageColors.getMsgColor(" "));
                     player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));
@@ -119,17 +123,14 @@ public class NameMCAPICMD implements CommandExecutor {
                 return true;
             }
 
+            if (!NameMCAPI.UUID_FORMATER.isValidUUID(uuid.toString())) {
+                player.sendMessage(MessagesManager.getMessageList("commands.verify.invalid-uuid", player));
+                return true;
+            }
+
             if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.cooldown.enabled")) {
                 CooldownManager.setCooldown(player.getUniqueId(), NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
             }
-
-            /*System.out.println("Verify");
-            System.out.println(VerifyManager.verifyVote(
-                    NameMCAPIServersMC.typeData,
-                    player.getName(),
-                    uuid,
-                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server")));*/
-
 
             if (VerifyManager.hasVoted(player.getUniqueId(), NameMCAPIServersMC.typeData)) {
                 player.sendMessage(MessagesManager.getMessageList("commands.verify.vote.already-voted", player));
@@ -185,6 +186,21 @@ public class NameMCAPICMD implements CommandExecutor {
         }
 
         return true;
+
+    }
+
+    @Override
+    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+
+        if (args.length == 1) {
+            if (sender.hasPermission("namemc.admin")) {
+                return List.of("help", "admin", "info", "vote", "verify", "reload");
+            } else {
+                return List.of("help", "info", "vote", "verify");
+            }
+        }
+
+        return null;
 
     }
 }

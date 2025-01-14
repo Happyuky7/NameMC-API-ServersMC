@@ -6,15 +6,15 @@ Use of the NameMC API for Minecraft Servers.
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
 ### [Download 1.8 - 1.21.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
 
-### [DEV] [NEW VERSION 2.0.0 (DEV-117) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-117)
+### [DEV] [NEW VERSION 2.0.0 (DEV-118) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-118)
 
 ---
 
 ## Install 
 
 - Download Lasted Plugin Version.
+- - Move you plugin folder `/plugins`.
 - Start or Restart your server.
-- Move you plugin folder `/plugins`.
 - Join a plugin folder `/plugins/NameMCAPI`.
 - Configure Server IP in `config.yml`.
 <br></br>
@@ -28,6 +28,33 @@ Use of the NameMC API for Minecraft Servers.
 I **recommend** you to make a **backup** and **check** the **changelist** of 
 the plugin to avoid problems with `config`, `messages`, `commands` or `other things`.
 
+---
+
+## Commands
+
+- `/namemc` - Main Command.
+- `/namemc reload` - Reload Plugin.
+- `/namemc help` - View all commands and subcommands.
+
+---
+
+## Permissions
+
+- `namemc.admin` - Permission to use all commands.
+- `namemc.reload` - Permission to reload the plugin.
+
+---
+
+## Placeholder API
+
+- `%namemc_ip%` - IP of the server.
+- `%namemc_player%` - Player Name.
+- `%namemc_uuid%`, `%namemc_uniqueid%`, `%namemc_playeruuid%` - Player UUID.
+- `%namemc_vote_link%` - Vote Link.
+- `%namemc_voted%` - Voted Player.
+- `%namemc_vote_boolean%` - Boolean Voted Player. (True or False)
+- `%namemc_reward%` - Reward Player.
+- `%namemc_reward_boolean%` - Boolean Reward Player. (True or False)
 
 ---
 
@@ -58,8 +85,16 @@ Then you will find the compiled in the following folder
 NameMC-API-ServersMC/Code/target/
 ```
 
+---
 
---
+## Contributors
+
+- [Happyuky7](https://github.com/Happyuky7) - Main Developer, Maintainer, Translator (English, Spanish, Japanese, Chinese Simplified).
+- [InfoBlock](https://github.com/InfoBlock) - Translator German.
+- [staFF6773](https://github.com/staFF6773) - Translator Spanish (Spain).
+- [bobhenl](https://github.com/bobhenl) - Tester.
+
+---
 
 ## Join us
 

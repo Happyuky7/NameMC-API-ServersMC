@@ -1,0 +1,95 @@
+# NameMC-API-ServersMC
+# Lang Translation: Japanese (Japan)
+# Original Author Translation: https://github.com/Happyuky7/
+# Contributors:
+# - https://github.com/Happyuky7/
+# Lasted Update Version (Plugin): 2.0.0-DEV-118
+
+# Lang ID | NOTE: Do not change this value.
+lang-id: jp_JA # Example: en_US, es_ES, pt_BR, etc.
+
+# Basic
+prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
+no-permission: "%prefix% &cこのコマンドを使用する権限がありません。"
+
+integrations:
+  placeholderapi:
+    voted-true: "&aうん" # PlaceholderAPI: %namemc_voted%
+    voted-false: "&cいいえ" # PlaceholderAPI: %namemc_voted%
+    reward-true: "&aうん" # PlaceholderAPI: %namemc_reward%
+    reward-false: "&cいいえ" # PlaceholderAPI: %namemc_reward%
+
+commands:
+  default:
+    - " "
+    - "&9 NameMCAPI &7- &aVersion: &f%version% &7- &aAuthor: &f%author%"
+    - " "
+    - " &7- &a/namemc help &7- &fすべてのコマンドを表示します。"
+    - " &7- &aサーバーに投票するには、&f/namemc vote &7- &fを使用してください。"
+    - "  "
+  vote:
+    - " "
+    - "&9 NameMCAPI &7- &f投票"
+    - " "
+    - " &7- &aサーバーに投票するには、以下のリンクをクリックしてください！"
+    - " &7- &f%vote_link%"
+    - " "
+  verify:
+    cooldown:
+      - " "
+      - "&9 NameMCAPI &7- &f投票"
+      - " "
+      - " &7- &aこのコマンドを再度使用する前に、&f%time% &待つ必要があります。"
+      - " "
+    error-onlinemode:
+      - " "
+      - "&9 NameMCAPI &7- &f投票"
+      - " "
+      - " &7- &f投票を確認する際にエラーが発生しました！"
+      - " &7- &fこれは必ずしもバグではなく、おそらくコマンドを実行したプレミアムでない（オフライン）プレイヤーです。"
+      - " "
+    invalid-uuid:
+      - " "
+      - "&9 NameMCAPI &7- &f投票"
+      - " "
+      - " &7- &c無効なUUIDです。"
+      - " "
+    rewards:
+      already-claimed:
+        - " "
+        - "&9 NameMCAPI &7- &f投票"
+        - " "
+        - " &7- &fこの投票の報酬はすでに受け取っています。"
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &f投票"
+        - " "
+        - " &7- &a投票の報酬を受け取りました。"
+        - " "
+    vote:
+      notvoted:
+        - " "
+        - "&9 NameMCAPI &7- &f投票"
+        - " "
+        - " &7- &cまだサーバーに投票していません。"
+        - " &7- &a/namemc vote &7- &fを使用してサーバーに投票してください。"
+        - " "
+      already-voted:
+        - " "
+        - "&9 NameMCAPI &7- &f投票"
+        - " "
+        - " &7- &aすでにサーバーに投票しています。"
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &f投票"
+        - " "
+        - " &7- &aサーバーに投票しました。"
+        - " "
+  reload:
+    - " "
+    - "&9 NameMCAPI &7- &fリロード"
+    - " "
+    - " &7- &aプラグインがリロードされました。"
+    - " "

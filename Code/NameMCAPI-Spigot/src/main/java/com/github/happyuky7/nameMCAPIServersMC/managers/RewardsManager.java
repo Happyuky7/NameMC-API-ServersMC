@@ -32,9 +32,14 @@ public class RewardsManager {
             NameMCAPIServersMC.getInstance().getServer().dispatchCommand(
                     NameMCAPIServersMC.getInstance().getServer().getConsoleSender(),
                     command
+                            .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
-                            .replace("%uuid%", player.getUniqueId().toString()
-                            ));
+                            .replace("%uuid%", player.getUniqueId().toString())
+                            .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("%vote_link%", "https://namemc.com/server/" +
+                                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+            );
         }
     }
 
@@ -45,9 +50,14 @@ public class RewardsManager {
         for (String command : commands) {
             player.performCommand(
                     command
+                            .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
-                            .replace("%uuid%", player.getUniqueId().toString()
-                            ));
+                            .replace("%uuid%", player.getUniqueId().toString())
+                            .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("%vote_link%", "https://namemc.com/server/" +
+                                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+            );
         }
     }
 
@@ -58,9 +68,14 @@ public class RewardsManager {
         for (String message : messages) {
             player.chat(
                     message
+                            .replace("%prefix%", NameMCAPIServersMC.getInstance().getLangs().getString("prefix"))
                             .replace("%player%", player.getName())
-                            .replace("%uuid%", player.getUniqueId().toString()
-                            ));
+                            .replace("%uuid%", player.getUniqueId().toString())
+                            .replace("%version%", NameMCAPIServersMC.getInstance().getDescription().getVersion())
+                            .replace("%author%", NameMCAPIServersMC.getInstance().getDescription().getAuthors().get(0))
+                            .replace("%vote_link%", "https://namemc.com/server/" +
+                                    NameMCAPIServersMC.getInstance().getConfig().getString("settings.ip-server"))
+            );
         }
     }
 

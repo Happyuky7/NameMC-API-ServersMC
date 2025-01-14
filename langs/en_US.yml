@@ -3,7 +3,7 @@
 # Original Author Translation: https://github.com/Happyuky7/
 # Contributors:
 # - https://github.com/Happyuky7/
-# Lasted Update Version (Plugin): 2.0.0-DEV-117
+# Lasted Update Version (Plugin): 2.0.0-DEV-118
 
 # Lang ID | NOTE: Do not change this value.
 lang-id: en_US # Example: en_US, es_ES, pt_BR, etc.
@@ -11,6 +11,13 @@ lang-id: en_US # Example: en_US, es_ES, pt_BR, etc.
 # Basic
 prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
 no-permission: "%prefix% &cYou do not have permission to use this command."
+
+integrations:
+  placeholderapi:
+    voted-true: "&aYes" # PlaceholderAPI: %namemc_voted%
+    voted-false: "&cNo" # PlaceholderAPI: %namemc_voted%
+    reward-true: "&aYes" # PlaceholderAPI: %namemc_reward%
+    reward-false: "&cNo" # PlaceholderAPI: %namemc_reward%
 
 commands:
   default:
@@ -39,7 +46,13 @@ commands:
       - "&9 NameMCAPI &7- &fVerify"
       - " "
       - " &7- &fAn error occurred while verifying your vote!"
-      - " &7- &fIt is not necessarily a bug, most likely the player who executed the command is a non-premium (offline) player."
+      - " &7- &fIt is not necessarily a bug or error, most likely the player who executed the command is a non-premium (offline) player."
+      - " "
+    invalid-uuid:
+      - " "
+      - "&9 NameMCAPI &7- &fVerify"
+      - " "
+      - " &7- &cInvalid UUID."
       - " "
     rewards:
       already-claimed:

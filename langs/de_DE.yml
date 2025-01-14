@@ -2,8 +2,9 @@
 # Lang Translation: German
 # Original Author Translation: https://github.com/InfoBlock/
 # Contributors:
+# - https://github.com/Happyuky7/
 # - https://github.com/InfoBlock/
-# Lasted Update Version (Plugin): 2.0.0-DEV-117
+# Lasted Update Version (Plugin): 2.0.0-DEV-118
 
 # Lang ID | NOTE: Do not change this value.
 lang-id: de_DE # Example: en_US, es_ES, pt_BR, etc.
@@ -11,6 +12,13 @@ lang-id: de_DE # Example: en_US, es_ES, pt_BR, etc.
 # Basic
 prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
 no-permission: "%prefix% &cDir fehlen die nötigen Rechte."
+
+integrations:
+  placeholderapi:
+    voted-true: "&aJa" # PlaceholderAPI: %namemc_voted%
+    voted-false: "&cNein" # PlaceholderAPI: %namemc_voted%
+    reward-true: "&aJa" # PlaceholderAPI: %namemc_reward%
+    reward-false: "&cNein" # PlaceholderAPI: %namemc_reward%
 
 commands:
   default:
@@ -39,7 +47,13 @@ commands:
       - "&9 NameMCAPI &7- &fVerifizieren"
       - " "
       - " &7- &fBeim verifizieren deiner Abstimmung trat ein Fehler auf!"
-      - " &7- &fEs ist nicht unbedingt ein Bug, womöglich hat der Spieler der den Befehl genutzt hat keine Original Ausgabe von Minecraft."
+      - " &7- &fEs ist nicht unbedingt ein Bug or error, womöglich hat der Spieler der den Befehl genutzt hat keine Original Ausgabe von Minecraft."
+      - " "
+    invalid-uuid:
+      - " "
+      - "&9 NameMCAPI &7- &fVerifizieren"
+      - " "
+      - " &7- &cUngültige UUID."
       - " "
     rewards:
       already-claimed:

@@ -1,0 +1,95 @@
+# NameMC-API-ServersMC
+# Lang Translation: Chinese Simplified (China)
+# Original Author Translation: https://github.com/Happyuky7/
+# Contributors:
+# - https://github.com/Happyuky7/
+# Lasted Update Version (Plugin): 2.0.0-DEV-118
+
+# Lang ID | NOTE: Do not change this value.
+lang-id: zh_CN # Example: en_US, es_ES, pt_BR, etc.
+
+# Basic
+prefix: "&8[&9NameMC-API-ServersMC&8]&r" #Value: %prefix%
+no-permission: "%prefix% &c您没有权限使用此命令。"
+
+integrations:
+  placeholderapi:
+    voted-true: "&a是" # PlaceholderAPI: %namemc_voted%
+    voted-false: "&c否" # PlaceholderAPI: %namemc_voted%
+    reward-true: "&a是" # PlaceholderAPI: %namemc_reward%
+    reward-false: "&c否" # PlaceholderAPI: %namemc_reward%
+
+commands:
+  default:
+    - " "
+    - "&9 NameMCAPI &7- &aVersion: &f%version% &7- &aAuthor: &f%author%"
+    - " "
+    - " &7- &a/namemc help &7- &f显示所有命令。"
+    - " &7- &a使用命令 &f/namemc vote &7- &f为服务器投票。"
+    - "  "
+  vote:
+    - " "
+    - "&9 NameMCAPI &7- &f选票"
+    - " "
+    - " &7- &a点击下面的链接为服务器投票！"
+    - " &7- &f%vote_link%"
+    - " "
+  verify:
+    cooldown:
+      - " "
+      - "&9 NameMCAPI &7- &f验证"
+      - " "
+      - " &7- &a您必须等待 &f%time% &a才能再次使用此命令。"
+      - " "
+    error-onlinemode:
+      - " "
+      - "&9 NameMCAPI &7- &f验证"
+      - " "
+      - " &7- &f验证您的投票时出现错误！"
+      - " &7- &f这不一定是一个错误，很可能执行命令的玩家是一个非正版（离线）玩家。"
+      - " "
+    invalid-uuid:
+      - " "
+      - "&9 NameMCAPI &7- &f验证"
+      - " "
+      - " &7- &c无效的UUID。"
+      - " "
+    rewards:
+      already-claimed:
+        - " "
+        - "&9 NameMCAPI &7- &f验证"
+        - " "
+        - " &7- &f您已经领取了此次投票的奖励。"
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &f验证"
+        - " "
+        - " &7- &a您已成功为服务器投票。"
+        - " "
+    vote:
+      notvoted:
+        - " "
+        - "&9 NameMCAPI &7- &f验证"
+        - " "
+        - " &7- &c您尚未为服务器投票。"
+        - " &7- &a使用命令 &f/namemc vote &7- &a为服务器投票。"
+        - " "
+      already-voted:
+        - " "
+        - "&9 NameMCAPI &7- &f验证"
+        - " "
+        - " &7- &a您已经为服务器投票。"
+        - " "
+      success:
+        - " "
+        - "&9 NameMCAPI &7- &f验证"
+        - " "
+        - " &7- &a您已成功为服务器投票。"
+        - " "
+  reload:
+    - " "
+    - "&9 NameMCAPI &7- &f重新加载"
+    - " "
+    - " &7- &a插件已成功重新加载。"
+    - " "
