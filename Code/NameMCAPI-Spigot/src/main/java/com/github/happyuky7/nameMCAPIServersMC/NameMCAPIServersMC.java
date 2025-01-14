@@ -5,11 +5,16 @@ import com.github.happyuky7.nameMCAPIServersMC.files.FileManager;
 import com.github.happyuky7.nameMCAPIServersMC.integration.PlaceholderAPIValues;
 import com.github.happyuky7.nameMCAPIServersMC.utils.DownloadTranslations;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
+import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.data.MongoDBManager;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginLoader;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.UUID;
 
 public final class NameMCAPIServersMC extends JavaPlugin {
 
@@ -40,7 +45,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         config = new FileManager(this, "config");
 
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-119")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-120")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
@@ -180,4 +185,27 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         return langFile.exists();
     }
 
+    public static UUID getUUIDOnlineMode(OfflinePlayer player) {
+        if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.online-mode")) {
+            return player.getUniqueId();
+        } else {
+            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false) != null) {
+                return NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
+            } else {
+                return player.getUniqueId();
+            }
+        }
+    }
+
+    public static UUID getUUIDOnlineMode(Player player) {
+        if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.online-mode")) {
+            return player.getUniqueId();
+        } else {
+            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false) != null) {
+                return NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
+            } else {
+                return player.getUniqueId();
+            }
+        }
+    }
 }

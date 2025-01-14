@@ -1,10 +1,8 @@
 package com.github.happyuky7.nameMCAPIServersMC.integration;
 
 import com.github.happyuky7.nameMCAPIServersMC.NameMCAPIServersMC;
-import com.github.happyuky7.nameMCAPIServersMC.managers.VerifyManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.data.YamlDataManager;
 import com.github.happyuky7.nameMCAPIServersMC.managers.msgs.MessagesManager;
-import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 
@@ -56,21 +54,12 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
         }
 
         if (params.equals("uuid") || params.equals("uniqueid") || params.equals("playeruuid")) {
-            if (plugin.getConfig().getBoolean("settings.online-mode")) {
-                return player.getUniqueId().toString();
-            } else {
-                if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false) != null) {
-                    return NameMCAPI.getInstance().getMojangUUID(player.getName(), false).toString();
-                } else {
-                    return player.getUniqueId().toString();
-                }
-            }
-
+            return player.getUniqueId().toString();
         }
 
         if (params.equals("voted_boolean")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                if (YamlDataManager.hasVoted(player.getUniqueId())) {
+                if (YamlDataManager.hasVoted(NameMCAPIServersMC.getUUIDOnlineMode(player))) {
                     return "true";
                 } else {
                     return "false";
@@ -83,7 +72,7 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("voted")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                if (YamlDataManager.hasVoted(player.getUniqueId())) {
+                if (YamlDataManager.hasVoted(NameMCAPIServersMC.getUUIDOnlineMode(player))) {
                     return MessagesManager.getMessage("integrations.placeholderapi.voted-true");
                 } else {
                     return MessagesManager.getMessage("integrations.placeholderapi.voted-false");
@@ -96,7 +85,7 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("reward_boolean")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                if (YamlDataManager.hasClaimedReward(player.getUniqueId())) {
+                if (YamlDataManager.hasClaimedReward(NameMCAPIServersMC.getUUIDOnlineMode(player))) {
                     return "true";
                 } else {
                     return "false";
@@ -108,7 +97,7 @@ public class PlaceholderAPIValues extends PlaceholderExpansion {
 
         if (params.equals("reward")) {
             if (NameMCAPIServersMC.typeData.equalsIgnoreCase("yaml")) {
-                if (YamlDataManager.hasClaimedReward(player.getUniqueId())) {
+                if (YamlDataManager.hasClaimedReward(NameMCAPIServersMC.getUUIDOnlineMode(player))) {
                     return MessagesManager.getMessage("integrations.placeholderapi.reward-true");
                 } else {
                     return MessagesManager.getMessage("integrations.placeholderapi.reward-false");

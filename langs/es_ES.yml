@@ -40,7 +40,7 @@ commands:
       - " "
       - "&9 NameMCAPI &7- &fVerificar"
       - " "
-      - " &7- &aDebe esperar &f%time% &antes de volver a utilizar este comando."
+      - " &7- &aDebe esperar &f%time% &aantes de volver a utilizar este comando."
       - " "
     error-onlinemode:
       - " "
