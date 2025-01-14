@@ -6,14 +6,14 @@ Use of the NameMC API for Minecraft Servers.
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
 ### [Download 1.8 - 1.21.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
 
-### [DEV] [NEW VERSION 2.0.0 (DEV-119) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-119)
+### [DEV] [NEW VERSION 2.0.0 (DEV-120) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-120)
 
 ---
 
 ## Install 
 
 - Download Lasted Plugin Version.
-- - Move you plugin folder `/plugins`.
+- Move you plugin folder `/plugins`.
 - Start or Restart your server.
 - Join a plugin folder `/plugins/NameMCAPI`.
 - Configure Server IP in `config.yml`.
@@ -40,7 +40,7 @@ the plugin to avoid problems with `config`, `messages`, `commands` or `other thi
 
 ## Permissions
 
-- `namemc.admin` - Permission to use all commands.
+- `namemc.admin` - Permission to admin commands.
 - `namemc.reload` - Permission to reload the plugin.
 
 ---
