@@ -47,14 +47,14 @@ the plugin to avoid problems with `config`, `messages`, `commands` or `other thi
 
 ## Placeholder API
 
-- `%namemc_ip%` - IP of the server.
-- `%namemc_player%` - Player Name.
-- `%namemc_uuid%`, `%namemc_uniqueid%`, `%namemc_playeruuid%` - Player UUID.
-- `%namemc_vote_link%` - Vote Link.
-- `%namemc_voted%` - Voted Player.
-- `%namemc_vote_boolean%` - Boolean Voted Player. (True or False)
-- `%namemc_reward%` - Reward Player.
-- `%namemc_reward_boolean%` - Boolean Reward Player. (True or False)
+- `%namemcapi_ip%` - IP of the server.
+- `%namemapic_player%` - Player Name.
+- `%namemapic_uuid%`, `%namemcapi_uniqueid%`, `%namemcapi_playeruuid%` - Player UUID.
+- `%namemcapi_vote_link%` - Vote Link.
+- `%namemcapi_voted%` - Voted Player.
+- `%namemcapi_vote_boolean%` - Boolean Voted Player. (True or False)
+- `%namemcapi_reward%` - Reward Player.
+- `%namemcapi_reward_boolean%` - Boolean Reward Player. (True or False)
 
 ---
 
