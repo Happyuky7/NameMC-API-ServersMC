@@ -26,7 +26,7 @@ commands:
     - "&9 NameMCAPI &7- &aVersion: &f%version% &7- &aAuthor: &f%author%"
     - " "
     - " &7- &a/namemc help &7- &fZeigt alle Befehle."
-    - " &7- &aNutzen &f/namemc vote &7- &fum für den Server abzustimmen."
+    - " &7- &aNutze &f/namemc vote &7- &fum für den Server abzustimmen."
     - "  "
   vote:
     - " "
@@ -47,7 +47,7 @@ commands:
       - "&9 NameMCAPI &7- &fVerifizieren"
       - " "
       - " &7- &fBeim verifizieren deiner Abstimmung trat ein Fehler auf!"
-      - " &7- &fEs ist nicht unbedingt ein Bug or error, womöglich hat der Spieler der den Befehl genutzt hat keine Original Ausgabe von Minecraft."
+      - " &7- &fEs ist nicht unbedingt ein Bug oder Fehler, womöglich hat der Spieler der den Befehl genutzt hat keine Original Ausgabe von Minecraft."
       - " "
     invalid-uuid:
       - " "
