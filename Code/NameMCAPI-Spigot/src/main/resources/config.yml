@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-Spigot-DEV-120
+config-version: 2.0.0-Spigot-DEV-121
 
 data:
 
@@ -49,9 +49,12 @@ settings:
 
   langs:
     autoDownload: true # Auto download the language file from the GitHub repository. (Recommended enabled)
-    lang: "en_US" # Language file. (Default: en_US)
+    # NOTE: 'langs' is a file that allows you to translate the plugin
+    #       to any language that is not in the list of available languages yet.
+    lang: "en_US" # Language file. (Default: en_US) | Change REQUIRED restart.
 
   # RECOMMENDED! Enabled. (In Development)
+  # Bypass Permission: namemc.cooldown.verify.bypass
   cooldown:
     enabled: true
     # Cooldown time in seconds.
@@ -63,6 +66,9 @@ integrations:
   # PlaceholderAPI integration.
   # PlaceholderAPI is a plugin that allows you to use placeholders from other plugins.
   # https://www.spigotmc.org/resources/placeholderapi.6245/
+  # -----------------------------------------------------
+  # View the list of placeholders this NameMC-API-ServersMC plugin provides.
+  # https://github.com/Happyuky7/NameMC-API-ServersMC?tab=readme-ov-file#placeholder-api
   # -----------------------------------------------------
   # REQUIRED PlaceholderAPI plugin installed.
   # Enable or disable PlaceholderAPI integration. (Recommended enabled | Required PlaceholderAPI plugin)

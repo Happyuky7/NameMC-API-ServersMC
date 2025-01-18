@@ -6,7 +6,7 @@ Use of the NameMC API for Minecraft Servers.
 ### [Github](https://github.com/Happyuky7/NameMC-API-ServersMC/)
 ### [Download 1.8 - 1.21.4](https://github.com/Happyuky7/NameMC-API-ServersMC/releases)
 
-### [DEV] [NEW VERSION 2.0.0 (DEV-120) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-120)
+### [DEV] [NEW VERSION 2.0.0 (DEV-121) (RE-CODE)](https://github.com/Happyuky7/NameMC-API-ServersMC/releases/tag/2.0.0-DEV-121)
 
 ---
 
@@ -42,6 +42,7 @@ the plugin to avoid problems with `config`, `messages`, `commands` or `other thi
 
 - `namemc.admin` - Permission to admin commands.
 - `namemc.reload` - Permission to reload the plugin.
+- `namemc.cooldown.verify.bypass` - Permission to bypass the cooldown of the verify command.
 
 ---
 

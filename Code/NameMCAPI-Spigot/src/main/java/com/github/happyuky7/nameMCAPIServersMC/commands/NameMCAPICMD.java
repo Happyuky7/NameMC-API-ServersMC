@@ -7,7 +7,6 @@ import com.github.happyuky7.nameMCAPIServersMC.managers.msgs.MessagesManager;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
 import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
 import com.github.happyuky7.nameMCAPIServersMCCommon.api.CooldownManager;
-import com.github.happyuky7.nameMCAPIServersMCCommon.api.MojangAPIManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -40,7 +39,7 @@ public class NameMCAPICMD implements CommandExecutor, TabCompleter {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fHelp"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-120"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-121"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -81,7 +80,7 @@ public class NameMCAPICMD implements CommandExecutor, TabCompleter {
             player.sendMessage(MessageColors.getMsgColor(" "));
             player.sendMessage(MessageColors.getMsgColor(" &aNameMCAPIServersMC &7- &fInformation"));
             player.sendMessage(MessageColors.getMsgColor(" "));
-            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-120"));
+            player.sendMessage(MessageColors.getMsgColor(" &8| &aVersion:&f 2.0.0-DEV-121"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aAuthor:&f Happyuky7"));
             player.sendMessage(MessageColors.getMsgColor(" &8| &aGithub:&f https://github.com/Happyuky7/NameMC-API-ServersMC"));
             player.sendMessage(MessageColors.getMsgColor(" "));
@@ -129,7 +128,9 @@ public class NameMCAPICMD implements CommandExecutor, TabCompleter {
             }
 
             if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.cooldown.enabled")) {
-                CooldownManager.setCooldown(player.getUniqueId(), NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
+                if (!player.hasPermission("namemc.cooldown.verify.bypass")) {
+                    NameMCAPI.COOLDOWN_API.setCooldown(player.getUniqueId(), NameMCAPIServersMC.getInstance().getConfig().getInt("settings.cooldown.time"));
+                }
             }
 
             if (VerifyManager.hasVoted(player.getUniqueId(), NameMCAPIServersMC.typeData)) {
@@ -181,6 +182,7 @@ public class NameMCAPICMD implements CommandExecutor, TabCompleter {
             }
 
             NameMCAPIServersMC.getInstance().getConfig().reload();
+            NameMCAPIServersMC.getInstance().getLangs().reload();
             player.sendMessage(MessagesManager.getMessageList("commands.reload", player));
             return true;
         }

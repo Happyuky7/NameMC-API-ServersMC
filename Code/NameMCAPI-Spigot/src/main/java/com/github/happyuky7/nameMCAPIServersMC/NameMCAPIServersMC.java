@@ -3,6 +3,7 @@ package com.github.happyuky7.nameMCAPIServersMC;
 import com.github.happyuky7.nameMCAPIServersMC.commands.NameMCAPICMD;
 import com.github.happyuky7.nameMCAPIServersMC.files.FileManager;
 import com.github.happyuky7.nameMCAPIServersMC.integration.PlaceholderAPIValues;
+import com.github.happyuky7.nameMCAPIServersMC.integration.PlaceholderAPIValues2;
 import com.github.happyuky7.nameMCAPIServersMC.utils.DownloadTranslations;
 import com.github.happyuky7.nameMCAPIServersMC.utils.MessageColors;
 import com.github.happyuky7.nameMCAPIServersMCCommon.NameMCAPI;
@@ -10,7 +11,6 @@ import com.github.happyuky7.nameMCAPIServersMCCommon.api.data.MongoDBManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.PluginLoader;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -44,8 +44,18 @@ public final class NameMCAPIServersMC extends JavaPlugin {
 
         config = new FileManager(this, "config");
 
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a NameMCAPI &7- &aEnabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a Author: &f" + getDescription().getAuthors().get(0)));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a Version: &f" + getDescription().getVersion()));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a Github: &fhttps://github.com/Happyuky7/NameMC-API-ServersMC"));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a Server Version: &f" + Bukkit.getVersion()));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-120")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-121")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
@@ -58,6 +68,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         if (getConfig().getBoolean("integrations.placeholderapi")) {
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
                 new PlaceholderAPIValues(this).register();
+                new PlaceholderAPIValues2(this).register();
                 integrationPlaceholderAPI = true;
                 Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&a[NameMCAPIServersMC] PlaceholderAPI has been integrated!"));
             } else {
@@ -143,7 +154,13 @@ public final class NameMCAPIServersMC extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
 
-        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Plugin has been disabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c NameMCAPI &7- &cDisabled!"));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c Author: &f" + getDescription().getAuthors().get(0)));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c Version: &f" + getDescription().getVersion()));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c Github: &fhttps://github.com/Happyuky7/NameMC-API-ServersMC"));
+        Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
     }
 
 
