@@ -48,8 +48,8 @@ the plugin to avoid problems with `config`, `messages`, `commands` or `other thi
 ## Placeholder API
 
 - `%namemcapi_ip%` - IP of the server.
-- `%namemapic_player%` - Player Name.
-- `%namemapic_uuid%`, `%namemcapi_uniqueid%`, `%namemcapi_playeruuid%` - Player UUID.
+- `%namemcapi_player%` - Player Name.
+- `%namemcapi_uuid%`, `%namemcapi_uniqueid%`, `%namemcapi_playeruuid%` - Player UUID.
 - `%namemcapi_vote_link%` - Vote Link.
 - `%namemcapi_voted%` - Voted Player.
 - `%namemcapi_vote_boolean%` - Boolean Voted Player. (True or False)
