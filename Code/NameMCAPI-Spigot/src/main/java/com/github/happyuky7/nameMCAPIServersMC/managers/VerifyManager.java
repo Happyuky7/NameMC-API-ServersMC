@@ -58,7 +58,8 @@ public class VerifyManager {
         }
 
         //System.out.println("NameMCAPI.getInstance().getVotes(uuid, ip): " + NameMCAPI.getInstance().getVote(uuid, ip));
-        if (NameMCAPI.getInstance().getVote(uuid, ip)) {
+        Integer timeoutNameMC = NameMCAPIServersMC.getInstance().getConfig().getInt("settings.timeout-namemc");
+        if (NameMCAPI.getInstance().getVote(uuid, ip, timeoutNameMC)) {
             YamlDataManager.setVote(username, uuid, true);
             //System.out.println("Voted");
             voted.put(uuid, true);

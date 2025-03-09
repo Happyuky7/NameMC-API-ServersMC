@@ -105,7 +105,8 @@ public class NameMCAPICMD implements CommandExecutor, TabCompleter {
                 uuid = player.getUniqueId();
             } else {
                 try {
-                    uuid = NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
+                    Integer timeoutMonjang = NameMCAPIServersMC.getInstance().getConfig().getInt("settings.timeout-mojang");
+                    uuid = NameMCAPI.getInstance().getMojangUUID(player.getName(), false, timeoutMonjang);
                 } catch (Exception e) {
                     player.sendMessage(MessageColors.getMsgColor(" "));
                     player.sendMessage(MessageColors.getMsgColor(" &9NameMCAPIServersMC &7- &fVerify"));

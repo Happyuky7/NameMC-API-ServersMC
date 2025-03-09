@@ -85,6 +85,18 @@ public class NameMCAPI {
         }
     }
 
+    public boolean getVote(UUID uuid, String serverip, int timeout) {
+        try {
+            if (uuid == null || serverip == null) {
+                throw new IllegalArgumentException("UUID or Server IP cannot be null.");
+            }
+            return NameMCAPIGET.getVote(uuid, serverip, timeout);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     /**
      * Retrieves the Mojang UUID for a given Minecraft player name.
      *
@@ -99,15 +111,24 @@ public class NameMCAPI {
         return null;
     }
 
+    public UUID getMojangUUID(String name, boolean error) {
+        try {
+            return UUIDFormated.fromStringWithHyphens(MojangAPIManager.getUUID(name, error));
+        } catch (Exception e) {
+            //e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * Retrieves the Mojang UUID for a given Minecraft player name.
      *
      * @param name the name of the Minecraft player.
      * @return
      */
-    public UUID getMojangUUID(String name, boolean error) {
+    public UUID getMojangUUID(String name, boolean error, int timeout) {
         try {
-            return UUIDFormated.fromStringWithHyphens(MojangAPIManager.getUUID(name, error));
+            return UUIDFormated.fromStringWithHyphens(MojangAPIManager.getUUID(name, error, timeout));
         } catch (Exception e) {
             //e.printStackTrace();
             return null;

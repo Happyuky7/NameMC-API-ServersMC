@@ -69,6 +69,43 @@ public class NameMCAPIGET {
         return false;
     }
 
+    // Get the vote of a player with timeout
+    public static boolean getVote(UUID uuid, String serverIP, int timeout) {
+        try {
+            if (uuid == null || serverIP == null) {
+                throw new IllegalArgumentException("UUID or Server IP cannot be null.");
+            }
+
+            String url = getURLVote()
+                    .replaceAll("<server-ip>", serverIP)
+                    .replaceAll("<uuid>", String.valueOf(uuid));
+            HttpURLConnection connection = (HttpURLConnection) (new URL(url)).openConnection();
+            connection.setConnectTimeout(timeout);
+            connection.setReadTimeout(timeout);
+            connection.setRequestMethod("GET");
+            int responseCode = connection.getResponseCode();
+
+            if (responseCode == 200) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                boolean hasVoted = Boolean.parseBoolean(response.toString());
+                return hasVoted;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     // in the future and for now, this method is not used
     // Recode this method to found correct.

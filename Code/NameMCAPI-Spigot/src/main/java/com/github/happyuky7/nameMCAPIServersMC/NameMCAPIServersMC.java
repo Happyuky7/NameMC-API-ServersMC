@@ -55,7 +55,7 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor(" "));
 
         // Version config check
-        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-121")) {
+        if (!getConfig().getString("config-version").equalsIgnoreCase("2.0.0-Spigot-DEV-122")) {
 
             Bukkit.getConsoleSender().sendMessage(MessageColors.getMsgColor("&c[NameMCAPIServersMC] Your config is outdated! Please delete your config.yml and restart the server!"));
             Bukkit.getPluginManager().disablePlugin(this);
@@ -206,7 +206,8 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.online-mode")) {
             return player.getUniqueId();
         } else {
-            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false) != null) {
+            Integer timeoutMonjang = NameMCAPIServersMC.getInstance().getConfig().getInt("settings.timeout-mojang");
+            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false, timeoutMonjang) != null) {
                 return NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
             } else {
                 return player.getUniqueId();
@@ -218,7 +219,8 @@ public final class NameMCAPIServersMC extends JavaPlugin {
         if (NameMCAPIServersMC.getInstance().getConfig().getBoolean("settings.online-mode")) {
             return player.getUniqueId();
         } else {
-            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false) != null) {
+            Integer timeoutMonjang = NameMCAPIServersMC.getInstance().getConfig().getInt("settings.timeout-mojang");
+            if (NameMCAPI.getInstance().getMojangUUID(player.getName(), false, timeoutMonjang) != null) {
                 return NameMCAPI.getInstance().getMojangUUID(player.getName(), false);
             } else {
                 return player.getUniqueId();

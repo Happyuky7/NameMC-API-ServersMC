@@ -1,5 +1,5 @@
 
-config-version: 2.0.0-Spigot-DEV-121
+config-version: 2.0.0-Spigot-DEV-122
 
 data:
 
@@ -46,6 +46,12 @@ settings:
   # -----------------------------------------------------
   # Default: true
   online-mode: true
+
+  # Timeout
+  # Request timeout in milliseconds.
+  # Default: 5000 (5 seconds)
+  timeout-mojang: 5000
+  timeout-namemc: 5000
 
   langs:
     autoDownload: true # Auto download the language file from the GitHub repository. (Recommended enabled)
